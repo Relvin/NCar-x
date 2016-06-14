@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UINavigationController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="A5q-Xq-K1A"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MainView" customModule="NCar_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="GPW-vJ-bbw">
+                    <rect key="frame" x="0.0" y="74" width="600" height="482"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="bzx-1V-JmX"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="coh-M1-S2F"/>
+                    </connections>
+                </tableView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="jc3-Jv-GDM">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <color key="backgroundColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="05V-E7-C5U"/>
+                        <constraint firstAttribute="height" constant="44" id="VTZ-cq-AAG"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Bq1-W7-R7f"/>
+                        <barButtonItem title="Item" id="tgA-ck-ttP"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vhK-JO-gBQ"/>
+                        <barButtonItem systemItem="camera" id="kmJ-B2-1hU">
+                            <connections>
+                                <action selector="cameraCallback:" destination="iN0-l3-epB" id="A9f-TC-EAU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="X7A-hW-TGR"/>
+                        <barButtonItem title="item" id="Yie-69-9a4"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Gos-xi-Q2j"/>
+                    </items>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="05V-E7-C5U"/>
+                        </mask>
+                    </variation>
+                </toolbar>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQ1-qR-1Rt">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="74" id="Fg4-dw-slo"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Title" prompt="" id="lVI-Ec-jUY">
+                            <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ufx-gc-HgH">
+                                <connections>
+                                    <action selector="onBack:" destination="-1" id="SFW-CJ-T8y"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jc3-Jv-GDM" firstAttribute="top" secondItem="GPW-vJ-bbw" secondAttribute="bottom" id="58f-4O-gSk"/>
+                <constraint firstAttribute="trailing" secondItem="jc3-Jv-GDM" secondAttribute="trailing" id="AmJ-mC-Jgt"/>
+                <constraint firstItem="GPW-vJ-bbw" firstAttribute="top" secondItem="PQ1-qR-1Rt" secondAttribute="bottom" id="Gsh-aq-7Sy"/>
+                <constraint firstItem="GPW-vJ-bbw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J9I-NU-2Kz"/>
+                <constraint firstItem="GPW-vJ-bbw" firstAttribute="bottom" secondItem="PQ1-qR-1Rt" secondAttribute="bottom" id="Jo9-PL-jMO"/>
+                <constraint firstItem="jc3-Jv-GDM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Pr2-Gd-ZWN"/>
+                <constraint firstItem="GPW-vJ-bbw" firstAttribute="top" secondItem="PQ1-qR-1Rt" secondAttribute="bottom" id="Q5O-C4-Edz"/>
+                <constraint firstItem="GPW-vJ-bbw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="UqL-RE-TAM"/>
+                <constraint firstAttribute="trailing" secondItem="GPW-vJ-bbw" secondAttribute="trailing" id="ctR-ad-djf"/>
+                <constraint firstItem="jc3-Jv-GDM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dcU-Vl-Dl3"/>
+                <constraint firstAttribute="trailing" secondItem="PQ1-qR-1Rt" secondAttribute="trailing" id="goE-UI-kcl"/>
+                <constraint firstAttribute="bottom" secondItem="jc3-Jv-GDM" secondAttribute="bottom" id="lZr-Za-wxR"/>
+                <constraint firstItem="PQ1-qR-1Rt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="w80-8o-lxP"/>
+                <constraint firstItem="GPW-vJ-bbw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xVM-zn-NlU"/>
+                <constraint firstItem="PQ1-qR-1Rt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ytE-yZ-7q4"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Jo9-PL-jMO"/>
+                    <exclude reference="UqL-RE-TAM"/>
+                    <exclude reference="dcU-Vl-Dl3"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="_tableView" destination="GPW-vJ-bbw" id="2sG-Mf-Yfr"/>
+                <outlet property="_toolbar" destination="jc3-Jv-GDM" id="A5d-uK-W2K"/>
+            </connections>
+            <point key="canvasLocation" x="148" y="290"/>
+        </view>
+    </objects>
+</document>
