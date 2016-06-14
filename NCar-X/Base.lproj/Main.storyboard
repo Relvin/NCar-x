@@ -25,6 +25,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucN-0i-3Sn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1096" y="-1339"/>
         </scene>
         <!--信息-->
         <scene sceneID="aeQ-dL-ZR1">
@@ -60,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZy-yC-EfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="1053"/>
+            <point key="canvasLocation" x="-138" y="-155"/>
         </scene>
         <!--首页-->
         <scene sceneID="b20-7R-ZLM">
@@ -154,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ic-IK-fcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482" y="1562"/>
+            <point key="canvasLocation" x="-810" y="722"/>
         </scene>
         <!--消息-->
         <scene sceneID="CgY-50-pqs">
@@ -173,11 +174,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xH-cR-rc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1573" y="-139"/>
         </scene>
         <!--拍照-->
         <scene sceneID="7LF-Tj-TYi">
             <objects>
-                <viewController id="5uC-OB-pex" sceneMemberID="viewController">
+                <viewController id="5uC-OB-pex" customClass="NCameraController" customModule="NCar_X" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zux-C2-Jn1"/>
                         <viewControllerLayoutGuide type="bottom" id="AOz-RG-pSX"/>
@@ -185,13 +187,34 @@
                     <view key="view" contentMode="scaleToFill" id="xqN-2j-Ujo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wO6-4R-k7R">
+                                <rect key="frame" x="0.0" y="28" width="600" height="523"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wO6-4R-k7R" firstAttribute="centerY" secondItem="xqN-2j-Ujo" secondAttribute="centerY" constant="-10.5" id="24f-OZ-ZGL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wO6-4R-k7R" secondAttribute="trailing" constant="-20" id="DDG-Dy-DRH"/>
+                            <constraint firstItem="AOz-RG-pSX" firstAttribute="top" secondItem="wO6-4R-k7R" secondAttribute="bottom" id="PIv-Jo-x6a"/>
+                            <constraint firstItem="wO6-4R-k7R" firstAttribute="leading" secondItem="xqN-2j-Ujo" secondAttribute="leadingMargin" constant="-20" id="qER-EN-shg"/>
+                            <constraint firstItem="wO6-4R-k7R" firstAttribute="top" secondItem="xqN-2j-Ujo" secondAttribute="topMargin" constant="28" id="rTP-mM-baf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PIv-Jo-x6a"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="拍照" id="SG3-Tq-yE5"/>
+                    <connections>
+                        <outlet property="_cameraView" destination="xqN-2j-Ujo" id="7Na-yz-8pz"/>
+                        <outlet property="imagea" destination="wO6-4R-k7R" id="2Bv-Ot-x44"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pic-CO-9Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="261"/>
+            <point key="canvasLocation" x="584" y="-155"/>
         </scene>
         <!--个人中心-->
         <scene sceneID="CxF-LY-r0P">
@@ -202,11 +225,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9jP-iy-AcR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="s97-Gd-jqk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KR1-tu-49m">
-                                <rect key="frame" x="-12" y="64" width="399" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="PDs-Lt-pbm" id="3p0-NQ-yAH"/>
@@ -218,8 +241,8 @@
                         <constraints>
                             <constraint firstItem="KR1-tu-49m" firstAttribute="centerY" secondItem="s97-Gd-jqk" secondAttribute="centerY" constant="7.5" id="EzS-ss-k5e"/>
                             <constraint firstItem="KR1-tu-49m" firstAttribute="centerX" secondItem="s97-Gd-jqk" secondAttribute="centerX" id="KiN-0c-fos"/>
-                            <constraint firstItem="KR1-tu-49m" firstAttribute="leading" secondItem="s97-Gd-jqk" secondAttribute="leadingMargin" constant="-28" id="MG5-5C-lIc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KR1-tu-49m" secondAttribute="trailing" constant="-28" id="Zgz-pj-pXS"/>
+                            <constraint firstItem="KR1-tu-49m" firstAttribute="leading" secondItem="s97-Gd-jqk" secondAttribute="leadingMargin" constant="-20" id="MG5-5C-lIc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KR1-tu-49m" secondAttribute="trailing" constant="-20" id="Zgz-pj-pXS"/>
                             <constraint firstItem="KR1-tu-49m" firstAttribute="top" secondItem="Yxy-qN-68v" secondAttribute="bottom" id="bCb-rU-kmi"/>
                             <constraint firstItem="KR1-tu-49m" firstAttribute="bottom" secondItem="9jP-iy-AcR" secondAttribute="top" id="f2n-3q-dNH"/>
                             <constraint firstItem="9jP-iy-AcR" firstAttribute="top" secondItem="KR1-tu-49m" secondAttribute="bottom" id="zPL-5m-aIw"/>
@@ -233,14 +256,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="个人中心" id="yqm-qa-Rh7"/>
                     <navigationItem key="navigationItem" title="个人中心" id="f4c-8I-145"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="_tableView" destination="KR1-tu-49m" id="d0R-LF-0T1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3U7-qn-Kf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="-432"/>
+            <point key="canvasLocation" x="563" y="-1339"/>
         </scene>
         <!--首页-->
         <scene sceneID="EdZ-7R-tGs">
@@ -257,10 +279,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G3R-Fd-Okk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-815" y="-139"/>
         </scene>
         <!--个人中心-->
         <scene sceneID="Kxg-pF-ud8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzq-sW-9lV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="YKN-1Z-ia9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="个人中心" id="F1W-gt-grf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wEW-08-WDG">
@@ -271,8 +295,8 @@
                         <segue destination="PDs-Lt-pbm" kind="relationship" relationship="rootViewController" id="HFU-hY-HMs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzq-sW-9lV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-190" y="-1339"/>
         </scene>
     </scenes>
 </document>
