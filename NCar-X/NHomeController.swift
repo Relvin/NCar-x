@@ -9,15 +9,28 @@
 import UIKit
 
 
-class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSource{
+class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     
     @IBOutlet weak var _tableView: UITableView!
     @IBOutlet weak var _textField: UITextField!
     @IBOutlet weak var _nameLabel: UILabel!
     
-    
+    @IBOutlet var rootView: UIView!
+    var tapGestureRecognizer: UITapGestureRecognizer!
     
     var cellLabel = ["零件号","到货包装形式","零件长","零件宽","零件高","叠加尺寸","包装模数","净重","零件材质","工艺推荐","备注"];
+    
+    override func viewDidLoad() {
+        super.viewDidLoad();
+        tapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(NHomeController.keyboardHide(_:)) );
+        //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+        tapGestureRecognizer.cancelsTouchesInView = false;
+        rootView.addGestureRecognizer(tapGestureRecognizer)
+        //将触摸事件添加到当前view
+//        [self.view addGestureRecognizer:tapGestureRecognizer];
+        
+    }
+
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         return cellLabel.count;
@@ -64,6 +77,24 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
 //            myTextField.text = "The Switch is Off"
         }
         
+    }
+    @IBAction func editingDidBegin(sender: AnyObject) {
+        tapGestureRecognizer.cancelsTouchesInView = true;
+        
+    }
+    func keyboardHide(tip:UITapGestureRecognizer){
+        
+        if(_textField.isFirstResponder())
+        {
+            _textField.resignFirstResponder();
+            tip.cancelsTouchesInView = false;
+        }
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        _textField.resignFirstResponder();
+        return true;
     }
     
 }

@@ -91,8 +91,9 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHe-oe-oxG">
                                         <rect key="frame" x="113" y="8" width="479" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
+                                            <action selector="editingDidBegin:" destination="aKE-Qh-zh3" eventType="editingDidBegin" id="erB-Wu-JvE"/>
                                             <outlet property="delegate" destination="aKE-Qh-zh3" id="WL9-rK-PRs"/>
                                         </connections>
                                     </textField>
@@ -151,6 +152,7 @@
                         <outlet property="_nameLabel" destination="zWk-0Q-sce" id="HOv-oz-46W"/>
                         <outlet property="_tableView" destination="0Yl-bC-pey" id="zfD-B8-8zl"/>
                         <outlet property="_textField" destination="iHe-oe-oxG" id="T98-Hb-8ji"/>
+                        <outlet property="rootView" destination="JKa-fg-c1H" id="6Qv-dv-y9X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ic-IK-fcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,7 +286,6 @@
         <!--个人中心-->
         <scene sceneID="Kxg-pF-ud8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzq-sW-9lV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="YKN-1Z-ia9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="个人中心" id="F1W-gt-grf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wEW-08-WDG">
@@ -295,6 +296,7 @@
                         <segue destination="PDs-Lt-pbm" kind="relationship" relationship="rootViewController" id="HFU-hY-HMs"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzq-sW-9lV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-190" y="-1339"/>
         </scene>
