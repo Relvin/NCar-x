@@ -8,12 +8,88 @@
 
 import UIKit
 
+enum cellType: Int32 {
+    case textFieldcell
+    case switchcell
+    case pickcell
+}
+
+let tableData = [
+    [
+        "ID" : 1,
+        "name" : "零件号",
+        "type" : 0,
+        "unit" : "",
+    ],
+    [
+        "ID" : 1,
+        "name" : "到货包装形式",
+        "type" : 2,
+        "unit" : "",
+    ],
+    [
+        "ID" : 1,
+        "name" : "零件长",
+        "type" : 0,
+        "unit" : "CM",
+    ],
+    [
+        "ID" : 1,
+        "name" : "零件宽",
+        "type" : 0,
+        "unit" : "CM",
+    ],
+    [
+        "ID" : 1,
+        "name" : "零件高",
+        "type" : 0,
+        "unit" : "CM",
+    ],
+    [
+        "ID" : 1,
+        "name" : "叠加尺寸",
+        "type" : 1,
+        "unit" : "",
+    ],
+    [
+        "ID" : 1,
+        "name" : "包装模数",
+        "type" : 0,
+        "unit" : "EA",
+    ],
+    [
+        "ID" : 1,
+        "name" : "净重",
+        "type" : 0,
+        "unit" : "KG",
+    ],
+    [
+        "ID" : 1,
+        "name" : "零件材质",
+        "type" : 2,
+        "unit" : "",
+    ],
+    [
+        "ID" : 1,
+        "name" : "工艺推荐",
+        "type" : 2,
+        "unit" : "",
+    ],
+    [
+        "ID" : 1,
+        "name" : "备注",
+        "type" : 0,
+        "unit" : "",
+    ]
+];
+
 
 class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     
     @IBOutlet weak var _tableView: UITableView!
     @IBOutlet weak var _textField: UITextField!
     @IBOutlet weak var _nameLabel: UILabel!
+    @IBOutlet weak var _unitLabel: UILabel!
     
     @IBOutlet var rootView: UIView!
     var tapGestureRecognizer: UITapGestureRecognizer!
@@ -23,19 +99,22 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad();
         tapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(NHomeController.keyboardHide(_:)) );
-        //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
-        tapGestureRecognizer.cancelsTouchesInView = false;
+        
         rootView.addGestureRecognizer(tapGestureRecognizer)
-        //将触摸事件添加到当前view
-//        [self.view addGestureRecognizer:tapGestureRecognizer];
+        _unitLabel.text = "";
         
     }
 
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+//        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath);
+//        return cell.frame.size.height + 20;
+//    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
-        return cellLabel.count;
+        return tableData.count;
     }
-    internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return 1;
     }
@@ -50,23 +129,78 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         }
         
 //        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-        let cell = _tableView.cellForRowAtIndexPath(indexPath);
-        _nameLabel.text = cell?.textLabel?.text;
+        let section = indexPath.section;
+        let cellData = tableData[section];
+        if ((cellData["type"] as! NSNumber).intValue == 0)
+        {
+            let cell = _tableView.cellForRowAtIndexPath(indexPath);
+            _nameLabel.text = cell?.textLabel?.text;
+            let unit = cellData["unit"] as? String;
+            _unitLabel.text = unit;
+            if (unit == "")
+            {
+                _textField.keyboardType = UIKeyboardType.ASCIICapable;
+            }
+            else{
+                _textField.keyboardType = UIKeyboardType.NumberPad;
+            }
+            
+        }
+        
     }
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let section = indexPath.section;
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("MyTestCell");
-        if (cell == nil){
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "MyTestCell");
+        let cellData = tableData[section];
+        let type = (cellData["type"] as! NSNumber).intValue;
+        var cell: UITableViewCell!;
+        switch type {
+        case 0:
+            cell = tableView.dequeueReusableCellWithIdentifier("textField");
+            if (cell == nil){
+                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
+//                let label = UILabel();
+                cell!.detailTextLabel!.text = "0" + (cellData["unit"] as! String);
+//                cell!.accessoryView = label;
+            }
+            break;
+        case 1:
+            cell = tableView.dequeueReusableCellWithIdentifier("switch");
+            if (cell == nil){
+                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "switch");
+                let mySwitch = UISwitch();
+                cell!.accessoryView = mySwitch;
+                mySwitch.addTarget(self, action: #selector(NHomeController.stateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+            }
+            break;
+        case 2:
+            cell = tableView.dequeueReusableCellWithIdentifier("pick");
+            if (cell == nil){
+                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "pick");
+                cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+            }
+            break;
+        default:
+            cell = tableView.dequeueReusableCellWithIdentifier("textField");
+            if (cell == nil){
+                cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
+                let label = UILabel();
+                cell!.accessoryView = label;
+            }
+                break;
+            
         }
+//
         
-        let mySwitch = UISwitch();
-        cell!.accessoryView = mySwitch;
-        mySwitch.addTarget(self, action: #selector(NHomeController.stateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+        
+        
         cell!.textLabel!.text = cellLabel[section];
+        
+        
+        
+        
         return cell!;
     }
     
@@ -82,11 +216,14 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         tapGestureRecognizer.cancelsTouchesInView = true;
         
     }
+
     func keyboardHide(tip:UITapGestureRecognizer){
         
         if(_textField.isFirstResponder())
         {
             _textField.resignFirstResponder();
+        }
+        else{
             tip.cancelsTouchesInView = false;
         }
         

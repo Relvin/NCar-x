@@ -76,20 +76,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-GF-g7d">
-                                <rect key="frame" x="0.0" y="64" width="600" height="39.5"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="零件号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-0Q-sce">
-                                        <rect key="frame" x="5" y="5.5" width="108" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="LWl-Da-r1g"/>
-                                            <constraint firstAttribute="width" constant="108" id="c76-Uy-z9f"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHe-oe-oxG">
-                                        <rect key="frame" x="113" y="8" width="479" height="17"/>
+                                        <rect key="frame" x="129" y="8" width="432" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
@@ -97,24 +87,46 @@
                                             <outlet property="delegate" destination="aKE-Qh-zh3" id="WL9-rK-PRs"/>
                                         </connections>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dy-aQ-MMW">
+                                        <rect key="frame" x="569" y="12" width="23" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="23" id="5hv-w2-rgx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="零件号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-0Q-sce">
+                                        <rect key="frame" x="8" y="11" width="108" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="108" id="0DX-tU-5Sn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="zWk-0Q-sce" firstAttribute="centerX" secondItem="Omf-GF-g7d" secondAttribute="centerX" constant="-265" id="5ez-kx-sa8"/>
-                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="centerX" secondItem="Omf-GF-g7d" secondAttribute="centerX" constant="52.5" id="HXc-bx-cLV"/>
-                                    <constraint firstAttribute="bottom" secondItem="zWk-0Q-sce" secondAttribute="bottom" constant="13" id="PRV-w1-cuK"/>
-                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="centerY" secondItem="zWk-0Q-sce" secondAttribute="centerY" id="dwy-2R-L8X"/>
-                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="leading" secondItem="zWk-0Q-sce" secondAttribute="trailing" id="jhS-E5-MUH"/>
-                                    <constraint firstItem="zWk-0Q-sce" firstAttribute="leading" secondItem="Omf-GF-g7d" secondAttribute="leading" constant="8" id="qbL-hD-tZ1"/>
-                                    <constraint firstAttribute="height" constant="46" id="rRb-Lq-YLw"/>
-                                    <constraint firstAttribute="trailing" secondItem="iHe-oe-oxG" secondAttribute="trailing" constant="8" id="s6X-VR-MCR"/>
-                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="top" secondItem="Omf-GF-g7d" secondAttribute="topMargin" id="yF1-3X-nGa"/>
+                                    <constraint firstItem="0Dy-aQ-MMW" firstAttribute="centerX" secondItem="Omf-GF-g7d" secondAttribute="centerX" id="2j8-Lm-9KJ"/>
+                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="centerY" secondItem="0Dy-aQ-MMW" secondAttribute="centerY" id="3n7-xa-Vh0"/>
+                                    <constraint firstItem="zWk-0Q-sce" firstAttribute="centerX" secondItem="Omf-GF-g7d" secondAttribute="centerX" id="8gx-NM-EFU"/>
+                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="top" secondItem="Omf-GF-g7d" secondAttribute="topMargin" id="Adv-AA-fCJ"/>
+                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="bottom" secondItem="zWk-0Q-sce" secondAttribute="bottom" id="G7X-66-jTe"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Dy-aQ-MMW" secondAttribute="trailing" constant="8" id="Ypf-KG-cpf"/>
+                                    <constraint firstItem="0Dy-aQ-MMW" firstAttribute="leading" secondItem="iHe-oe-oxG" secondAttribute="trailing" constant="8" id="c4n-pd-p1y"/>
+                                    <constraint firstItem="0Dy-aQ-MMW" firstAttribute="leading" secondItem="iHe-oe-oxG" secondAttribute="trailing" constant="8" id="dyN-O5-lNj"/>
+                                    <constraint firstItem="zWk-0Q-sce" firstAttribute="leading" secondItem="Omf-GF-g7d" secondAttribute="leading" constant="8" id="eBF-MT-hdy"/>
+                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="centerX" secondItem="Omf-GF-g7d" secondAttribute="centerX" id="ja9-fs-1VU"/>
+                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="bottom" secondItem="Omf-GF-g7d" secondAttribute="bottomMargin" id="nYd-mP-RqI"/>
+                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="leading" secondItem="zWk-0Q-sce" secondAttribute="trailing" constant="13" id="sZH-Wg-P0O"/>
+                                    <constraint firstItem="iHe-oe-oxG" firstAttribute="leading" secondItem="zWk-0Q-sce" secondAttribute="trailing" constant="13" id="xf1-NE-9Pu"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rRb-Lq-YLw"/>
-                                        <exclude reference="5ez-kx-sa8"/>
-                                        <exclude reference="qbL-hD-tZ1"/>
+                                        <exclude reference="8gx-NM-EFU"/>
+                                        <exclude reference="ja9-fs-1VU"/>
+                                        <exclude reference="2j8-Lm-9KJ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -139,6 +151,7 @@
                             <constraint firstItem="Omf-GF-g7d" firstAttribute="centerX" secondItem="JKa-fg-c1H" secondAttribute="centerX" id="W3U-mk-QIc"/>
                             <constraint firstItem="0Yl-bC-pey" firstAttribute="centerY" secondItem="JKa-fg-c1H" secondAttribute="centerY" constant="33.5" id="Z3l-6d-FJG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Omf-GF-g7d" secondAttribute="trailing" constant="-20" id="j3n-5v-M9M"/>
+                            <constraint firstItem="0Yl-bC-pey" firstAttribute="top" secondItem="Omf-GF-g7d" secondAttribute="bottom" constant="12" id="lX7-j0-vnd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -152,6 +165,7 @@
                         <outlet property="_nameLabel" destination="zWk-0Q-sce" id="HOv-oz-46W"/>
                         <outlet property="_tableView" destination="0Yl-bC-pey" id="zfD-B8-8zl"/>
                         <outlet property="_textField" destination="iHe-oe-oxG" id="T98-Hb-8ji"/>
+                        <outlet property="_unitLabel" destination="0Dy-aQ-MMW" id="5P5-O3-7oq"/>
                         <outlet property="rootView" destination="JKa-fg-c1H" id="6Qv-dv-y9X"/>
                     </connections>
                 </viewController>
