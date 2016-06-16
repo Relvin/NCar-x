@@ -78,10 +78,19 @@ let tableData = [
     [
         "ID" : 1,
         "name" : "备注",
-        "type" : 0,
+        "type" : 1,
         "unit" : "",
     ]
 ];
+
+
+let dataInfo = [
+    ["value" : "PC包装零件","text" : "分配给仓库自己包装的零件"],
+    ["value" : "裸件包装 - GW","text" : "对象为进口零件或分配给供应商包装的零件，工艺一般为：直接贴，栓挂等"],
+    ["value" : "软包装 - GS","text" : "对象为进口零件或分配给供应商包装的零件，工艺一般为：平口袋，气泡袋，气泡片，防锈袋（膜）、纸袋（纸箱夹扁）等"],
+    ["value" : "类纸箱包装 - GH","text" : "对象为进口零件或分配给供应商包装的零件，工艺一般为：纸箱，木箱，罐装等可以直接安全上托的零件"],
+    ["value" : "管类包装 - GG","text" : "对象为进口零件或分配给供应商包装的零件，工艺一般为：纸管，三角管，PVC管等管状工艺"],
+]
 
 
 class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
@@ -121,18 +130,16 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        if ((self.navigationController) != nil)
-        {
-//            var VC
-//            self.navigationController?.pushViewController(VC, animated: true);
-//            return;
-        }
+        
         
 //        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
         let section = indexPath.section;
         let cellData = tableData[section];
-        if ((cellData["type"] as! NSNumber).intValue == 0)
-        {
+        let type = (cellData["type"] as! NSNumber).intValue;
+        
+        
+        switch type {
+        case 0:
             let cell = _tableView.cellForRowAtIndexPath(indexPath);
             _nameLabel.text = cell?.textLabel?.text;
             let unit = cellData["unit"] as? String;
@@ -144,8 +151,22 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
             else{
                 _textField.keyboardType = UIKeyboardType.NumberPad;
             }
-            
+            break;
+        case 1:
+            break;
+        case 2:
+            if ((self.navigationController) != nil)
+            {
+                let packageView = packageController(nibName:"PackageChooseView",bundle: nil);
+                self.navigationController?.pushViewController(packageView, animated: true);
+                return;
+            }
+            break;
+        default:
+            break;
         }
+        
+        
         
     }
     
@@ -160,9 +181,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
             cell = tableView.dequeueReusableCellWithIdentifier("textField");
             if (cell == nil){
                 cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
-//                let label = UILabel();
                 cell!.detailTextLabel!.text = "0" + (cellData["unit"] as! String);
-//                cell!.accessoryView = label;
             }
             break;
         case 1:
@@ -180,6 +199,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
             if (cell == nil){
                 cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "pick");
                 cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
             }
             break;
         default:
@@ -235,3 +255,46 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     
 }
+
+class packageController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource
+{
+    
+    @IBOutlet weak var _pickView: UIPickerView!
+    @IBOutlet weak var _titleLabel: UILabel!
+    @IBOutlet weak var _textLabel: UILabel!
+    
+    override func viewDidLoad() {
+        _titleLabel.text = dataInfo[0]["value"]
+        _textLabel.text = dataInfo[0]["text"]
+//        _textLabel.sizeToFit();
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // 设置行数
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return dataInfo.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return (dataInfo[row]["value"]);
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        _titleLabel.text = dataInfo[row]["value"]
+        _textLabel.text = dataInfo[row]["text"]
+        
+    }
+    
+}
+
+
