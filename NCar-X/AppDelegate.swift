@@ -15,18 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        // Override point for customization after application launch.
-//        self.window!.backgroundColor = UIColor.whiteColor()
-//        
-//        //定义一个视图控制器
-//        let one_vc = TabBarController(nibName:"Main.storyboard",bundle: nil);
-//        //创建导航控制器
-////        let nvc=UINavigationController(rootViewController:one_vc);
-//        //设置根视图
-//        self.window!.rootViewController = one_vc;
-//        self.window!.makeKeyAndVisible()
-        // Override point for customization after application launch.
+        CarMainModel.sharedInstance
         return true
     }
 

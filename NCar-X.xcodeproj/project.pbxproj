@@ -10,7 +10,6 @@
 		AD00D6E81D0FAB08005E8E00 /* NCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00D6E71D0FAB08005E8E00 /* NCameraController.swift */; };
 		AD00D6EB1D0FD925005E8E00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD00D6EA1D0FD925005E8E00 /* Images.xcassets */; };
 		AD00D6EF1D0FDE44005E8E00 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = AD00D6EE1D0FDE44005E8E00 /* iTunesArtwork */; };
-		AD00D6F11D127EB4005E8E00 /* PackageChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD00D6F01D127EB4005E8E00 /* PackageChooseView.xib */; };
 		AD2194791D05114900F45A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194781D05114900F45A21 /* AppDelegate.swift */; };
 		AD21947B1D05114900F45A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21947A1D05114900F45A21 /* ViewController.swift */; };
 		AD2194831D05114900F45A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2194811D05114900F45A21 /* LaunchScreen.storyboard */; };
@@ -18,9 +17,18 @@
 		AD2194991D05114900F45A21 /* NCar_XUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194981D05114900F45A21 /* NCar_XUITests.swift */; };
 		AD2194A91D052CE700F45A21 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194A81D052CE700F45A21 /* MainView.swift */; };
 		AD2194AC1D05803900F45A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2194AA1D05803900F45A21 /* Main.storyboard */; };
-		AD2C3FBF1D070A04007BDB2D /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD2C3FBE1D070A04007BDB2D /* TabBarView.xib */; };
 		AD2C3FC11D0EB36B007BDB2D /* NHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */; };
 		AD2C3FC31D0EBF0C007BDB2D /* HomeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */; };
+		AD8A5AE91D1696A90033AAAE /* CarMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */; };
+		AD9672841D191D5E002BB801 /* MultTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9672821D191D5E002BB801 /* MultTableView.xib */; };
+		ADE017831D17C8B300D0E256 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE017821D17C8B300D0E256 /* SwiftyJSON.swift */; };
+		ADE017881D17CA4F00D0E256 /* craftRecommend.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017841D17CA4F00D0E256 /* craftRecommend.json */; };
+		ADE017891D17CA4F00D0E256 /* materialTexture.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017851D17CA4F00D0E256 /* materialTexture.json */; };
+		ADE0178A1D17CA4F00D0E256 /* packageDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017861D17CA4F00D0E256 /* packageDetail.json */; };
+		ADE0178B1D17CA4F00D0E256 /* partsParam.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017871D17CA4F00D0E256 /* partsParam.json */; };
+		ADE982D11D13E468005955F7 /* NTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE982CF1D13E468005955F7 /* NTableViewCell.swift */; };
+		ADE982DC1D13E741005955F7 /* PackageChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE982D51D13E741005955F7 /* PackageChooseView.xib */; };
+		ADE982DD1D13E741005955F7 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE982D71D13E741005955F7 /* SwitchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +52,7 @@
 		AD00D6E71D0FAB08005E8E00 /* NCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCameraController.swift; sourceTree = "<group>"; };
 		AD00D6EA1D0FD925005E8E00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AD00D6EE1D0FDE44005E8E00 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resource/iTunesArtwork; sourceTree = "<group>"; };
-		AD00D6F01D127EB4005E8E00 /* PackageChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PackageChooseView.xib; sourceTree = "<group>"; };
-		AD2194751D05114900F45A21 /* NCar-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NCar-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD2194751D05114900F45A21 /* 测量无忧.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "测量无忧.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2194781D05114900F45A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD21947A1D05114900F45A21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD2194821D05114900F45A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,9 +65,19 @@
 		AD21949A1D05114900F45A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD2194A81D052CE700F45A21 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AD2194AB1D05803900F45A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD2C3FBE1D070A04007BDB2D /* TabBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHomeController.swift; sourceTree = "<group>"; };
 		AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeData.plist; sourceTree = "<group>"; };
+		AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMainModel.swift; sourceTree = "<group>"; };
+		AD9672831D191D5E002BB801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MultTableView.xib; sourceTree = "<group>"; };
+		ADE017811D17C8B300D0E256 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
+		ADE017821D17C8B300D0E256 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		ADE017841D17CA4F00D0E256 /* craftRecommend.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = craftRecommend.json; path = Resource/craftRecommend.json; sourceTree = "<group>"; };
+		ADE017851D17CA4F00D0E256 /* materialTexture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = materialTexture.json; path = Resource/materialTexture.json; sourceTree = "<group>"; };
+		ADE017861D17CA4F00D0E256 /* packageDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = packageDetail.json; path = Resource/packageDetail.json; sourceTree = "<group>"; };
+		ADE017871D17CA4F00D0E256 /* partsParam.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = partsParam.json; path = Resource/partsParam.json; sourceTree = "<group>"; };
+		ADE982CF1D13E468005955F7 /* NTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTableViewCell.swift; sourceTree = "<group>"; };
+		ADE982D61D13E741005955F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackageChooseView.xib; sourceTree = "<group>"; };
+		ADE982D81D13E741005955F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SwitchCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +108,17 @@
 		AD00D6E91D0FD877005E8E00 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				ADE017841D17CA4F00D0E256 /* craftRecommend.json */,
+				ADE017851D17CA4F00D0E256 /* materialTexture.json */,
+				ADE017861D17CA4F00D0E256 /* packageDetail.json */,
+				ADE017871D17CA4F00D0E256 /* partsParam.json */,
+				ADE982D51D13E741005955F7 /* PackageChooseView.xib */,
+				ADE982D71D13E741005955F7 /* SwitchCell.xib */,
+				AD2194AA1D05803900F45A21 /* Main.storyboard */,
+				AD2194811D05114900F45A21 /* LaunchScreen.storyboard */,
 				AD00D6EE1D0FDE44005E8E00 /* iTunesArtwork */,
 				AD00D6EA1D0FD925005E8E00 /* Images.xcassets */,
+				AD9672821D191D5E002BB801 /* MultTableView.xib */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -110,7 +136,7 @@
 		AD2194761D05114900F45A21 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD2194751D05114900F45A21 /* NCar-X.app */,
+				AD2194751D05114900F45A21 /* 测量无忧.app */,
 				AD2194891D05114900F45A21 /* NCar-XTests.xctest */,
 				AD2194941D05114900F45A21 /* NCar-XUITests.xctest */,
 			);
@@ -120,18 +146,17 @@
 		AD2194771D05114900F45A21 /* NCar-X */ = {
 			isa = PBXGroup;
 			children = (
+				ADE017801D17C8B300D0E256 /* SwiftyJson */,
+				ADE982CF1D13E468005955F7 /* NTableViewCell.swift */,
 				AD00D6E91D0FD877005E8E00 /* Resource */,
 				AD2194781D05114900F45A21 /* AppDelegate.swift */,
-				AD2194AA1D05803900F45A21 /* Main.storyboard */,
 				AD00D6E71D0FAB08005E8E00 /* NCameraController.swift */,
-				AD2C3FBE1D070A04007BDB2D /* TabBarView.xib */,
 				AD21947A1D05114900F45A21 /* ViewController.swift */,
-				AD2194811D05114900F45A21 /* LaunchScreen.storyboard */,
 				AD2194841D05114900F45A21 /* Info.plist */,
 				AD2194A81D052CE700F45A21 /* MainView.swift */,
 				AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */,
 				AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */,
-				AD00D6F01D127EB4005E8E00 /* PackageChooseView.xib */,
+				AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */,
 			);
 			path = "NCar-X";
 			sourceTree = "<group>";
@@ -154,6 +179,15 @@
 			path = "NCar-XUITests";
 			sourceTree = "<group>";
 		};
+		ADE017801D17C8B300D0E256 /* SwiftyJson */ = {
+			isa = PBXGroup;
+			children = (
+				ADE017811D17C8B300D0E256 /* SwiftyJSON.h */,
+				ADE017821D17C8B300D0E256 /* SwiftyJSON.swift */,
+			);
+			path = SwiftyJson;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,7 +205,7 @@
 			);
 			name = "NCar-X";
 			productName = "NCar-X";
-			productReference = AD2194751D05114900F45A21 /* NCar-X.app */;
+			productReference = AD2194751D05114900F45A21 /* 测量无忧.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AD2194881D05114900F45A21 /* NCar-XTests */ = {
@@ -259,12 +293,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD2194831D05114900F45A21 /* LaunchScreen.storyboard in Resources */,
+				ADE982DD1D13E741005955F7 /* SwitchCell.xib in Resources */,
+				ADE017891D17CA4F00D0E256 /* materialTexture.json in Resources */,
+				ADE0178B1D17CA4F00D0E256 /* partsParam.json in Resources */,
+				ADE0178A1D17CA4F00D0E256 /* packageDetail.json in Resources */,
 				AD00D6EF1D0FDE44005E8E00 /* iTunesArtwork in Resources */,
-				AD2C3FBF1D070A04007BDB2D /* TabBarView.xib in Resources */,
 				AD00D6EB1D0FD925005E8E00 /* Images.xcassets in Resources */,
-				AD00D6F11D127EB4005E8E00 /* PackageChooseView.xib in Resources */,
+				ADE982DC1D13E741005955F7 /* PackageChooseView.xib in Resources */,
+				ADE017881D17CA4F00D0E256 /* craftRecommend.json in Resources */,
 				AD2194AC1D05803900F45A21 /* Main.storyboard in Resources */,
 				AD2C3FC31D0EBF0C007BDB2D /* HomeData.plist in Resources */,
+				AD9672841D191D5E002BB801 /* MultTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,9 +330,12 @@
 			files = (
 				AD21947B1D05114900F45A21 /* ViewController.swift in Sources */,
 				AD2194A91D052CE700F45A21 /* MainView.swift in Sources */,
+				AD8A5AE91D1696A90033AAAE /* CarMainModel.swift in Sources */,
+				ADE017831D17C8B300D0E256 /* SwiftyJSON.swift in Sources */,
 				AD2194791D05114900F45A21 /* AppDelegate.swift in Sources */,
 				AD2C3FC11D0EB36B007BDB2D /* NHomeController.swift in Sources */,
 				AD00D6E81D0FAB08005E8E00 /* NCameraController.swift in Sources */,
+				ADE982D11D13E468005955F7 /* NTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +385,30 @@
 				AD2194AB1D05803900F45A21 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD9672821D191D5E002BB801 /* MultTableView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD9672831D191D5E002BB801 /* Base */,
+			);
+			name = MultTableView.xib;
+			sourceTree = "<group>";
+		};
+		ADE982D51D13E741005955F7 /* PackageChooseView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADE982D61D13E741005955F7 /* Base */,
+			);
+			name = PackageChooseView.xib;
+			sourceTree = "<group>";
+		};
+		ADE982D71D13E741005955F7 /* SwitchCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADE982D81D13E741005955F7 /* Base */,
+			);
+			name = SwitchCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -442,8 +508,8 @@
 				INFOPLIST_FILE = "NCar-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamed9.dh;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Relvin.NCar-X";
+				PRODUCT_NAME = "测量无忧";
 			};
 			name = Debug;
 		};
@@ -456,8 +522,8 @@
 				INFOPLIST_FILE = "NCar-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamed9.dh;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Relvin.NCar-X";
+				PRODUCT_NAME = "测量无忧";
 			};
 			name = Release;
 		};

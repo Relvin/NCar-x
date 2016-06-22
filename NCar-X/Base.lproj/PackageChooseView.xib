@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="packageController" customModule="NCar_X" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="packageController" customModule="测量无忧" customModuleProvider="target">
             <connections>
                 <outlet property="_pickView" destination="WEk-l3-ZlO" id="j1X-a2-Aqb"/>
                 <outlet property="_textLabel" destination="kGZ-0q-Rn1" id="YSW-2g-aUr"/>
@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEk-l3-ZlO">
-                    <rect key="frame" x="0.0" y="305" width="600" height="216"/>
+                    <rect key="frame" x="0.0" y="334" width="600" height="216"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="216" id="Td5-Dc-olG"/>
                     </constraints>
@@ -39,9 +39,9 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGZ-0q-Rn1">
-                    <rect key="frame" x="8" y="108" width="584" height="50"/>
+                    <rect key="frame" x="8" y="108" width="584" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="FBl-Nt-03A"/>
+                        <constraint firstAttribute="height" constant="70" id="FBl-Nt-03A"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -52,21 +52,15 @@
             <constraints>
                 <constraint firstItem="WEk-l3-ZlO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1RC-Xm-JVY"/>
                 <constraint firstAttribute="trailing" secondItem="kGZ-0q-Rn1" secondAttribute="trailing" constant="8" id="Cxp-la-ehO"/>
-                <constraint firstAttribute="bottom" secondItem="WEk-l3-ZlO" secondAttribute="bottom" constant="79" id="Hr9-ZQ-MEa"/>
+                <constraint firstAttribute="bottom" secondItem="WEk-l3-ZlO" secondAttribute="bottom" constant="50" id="Hr9-ZQ-MEa"/>
                 <constraint firstItem="kGZ-0q-Rn1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="N9D-iP-G3j"/>
                 <constraint firstItem="bCp-zJ-WDz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="VFr-yj-USM"/>
-                <constraint firstItem="WEk-l3-ZlO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZOF-zw-ov7"/>
                 <constraint firstItem="bCp-zJ-WDz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="kW5-Hc-YDQ"/>
                 <constraint firstItem="kGZ-0q-Rn1" firstAttribute="top" secondItem="bCp-zJ-WDz" secondAttribute="bottom" constant="8" id="n1V-sf-qM9"/>
                 <constraint firstAttribute="trailing" secondItem="bCp-zJ-WDz" secondAttribute="trailing" constant="8" id="nxP-oI-FNn"/>
                 <constraint firstAttribute="trailing" secondItem="WEk-l3-ZlO" secondAttribute="trailing" id="qK5-hh-NrG"/>
                 <constraint firstItem="WEk-l3-ZlO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="s40-kF-Fie"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="ZOF-zw-ov7"/>
-                </mask>
-            </variation>
         </view>
     </objects>
 </document>

@@ -9,7 +9,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="zY2-JC-GmP">
             <objects>
-                <tabBarController id="K5Y-1u-egS" customClass="TabBarController" customModule="NCar_X" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="K5Y-1u-egS" customClass="TabBarController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5yf-bK-V47">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -66,7 +66,7 @@
         <!--首页-->
         <scene sceneID="b20-7R-ZLM">
             <objects>
-                <viewController id="aKE-Qh-zh3" customClass="NHomeController" customModule="NCar_X" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aKE-Qh-zh3" customClass="NHomeController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Znp-i7-kUS"/>
                         <viewControllerLayoutGuide type="bottom" id="kk7-iy-uE8"/>
@@ -76,19 +76,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-GF-g7d">
-                                <rect key="frame" x="0.0" y="64" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="33"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iHe-oe-oxG">
-                                        <rect key="frame" x="129" y="8" width="432" height="24"/>
+                                        <rect key="frame" x="129" y="8" width="432" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
                                             <action selector="editingDidBegin:" destination="aKE-Qh-zh3" eventType="editingDidBegin" id="erB-Wu-JvE"/>
+                                            <action selector="editingDidEnd:" destination="aKE-Qh-zh3" eventType="editingDidEnd" id="Wng-J6-EQV"/>
                                             <outlet property="delegate" destination="aKE-Qh-zh3" id="WL9-rK-PRs"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Dy-aQ-MMW">
-                                        <rect key="frame" x="569" y="12" width="23" height="17"/>
+                                        <rect key="frame" x="569" y="8.5" width="23" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="23" id="5hv-w2-rgx"/>
                                         </constraints>
@@ -97,7 +98,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="零件号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWk-0Q-sce">
-                                        <rect key="frame" x="8" y="11" width="108" height="21"/>
+                                        <rect key="frame" x="8" y="4" width="108" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="108" id="0DX-tU-5Sn"/>
                                         </constraints>
@@ -131,7 +132,7 @@
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Yl-bC-pey">
-                                <rect key="frame" x="0.0" y="116" width="600" height="435"/>
+                                <rect key="frame" x="0.0" y="109" width="600" height="442"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="aKE-Qh-zh3" id="o1p-in-rKC"/>
@@ -145,19 +146,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="0Yl-bC-pey" secondAttribute="trailing" constant="-20" id="6ff-Z6-Zsb"/>
                             <constraint firstItem="Omf-GF-g7d" firstAttribute="leading" secondItem="JKa-fg-c1H" secondAttribute="leadingMargin" constant="-20" id="EAG-eK-nav"/>
                             <constraint firstItem="0Yl-bC-pey" firstAttribute="centerX" secondItem="JKa-fg-c1H" secondAttribute="centerX" id="KiL-eD-RTF"/>
-                            <constraint firstItem="0Yl-bC-pey" firstAttribute="top" secondItem="Omf-GF-g7d" secondAttribute="bottom" constant="6" id="LDh-Ks-utM"/>
                             <constraint firstItem="0Yl-bC-pey" firstAttribute="leading" secondItem="JKa-fg-c1H" secondAttribute="leadingMargin" constant="-20" id="M45-b1-1DJ"/>
                             <constraint firstItem="kk7-iy-uE8" firstAttribute="top" secondItem="0Yl-bC-pey" secondAttribute="bottom" id="VQP-xF-hie"/>
                             <constraint firstItem="Omf-GF-g7d" firstAttribute="centerX" secondItem="JKa-fg-c1H" secondAttribute="centerX" id="W3U-mk-QIc"/>
-                            <constraint firstItem="0Yl-bC-pey" firstAttribute="centerY" secondItem="JKa-fg-c1H" secondAttribute="centerY" constant="33.5" id="Z3l-6d-FJG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Omf-GF-g7d" secondAttribute="trailing" constant="-20" id="j3n-5v-M9M"/>
                             <constraint firstItem="0Yl-bC-pey" firstAttribute="top" secondItem="Omf-GF-g7d" secondAttribute="bottom" constant="12" id="lX7-j0-vnd"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="LDh-Ks-utM"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" id="sTe-um-O7G"/>
                     <navigationItem key="navigationItem" title="首页" id="hj4-Y2-csJ"/>
@@ -195,7 +189,7 @@
         <!--拍照-->
         <scene sceneID="7LF-Tj-TYi">
             <objects>
-                <viewController id="5uC-OB-pex" customClass="NCameraController" customModule="NCar_X" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5uC-OB-pex" customClass="NCameraController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zux-C2-Jn1"/>
                         <viewControllerLayoutGuide type="bottom" id="AOz-RG-pSX"/>
@@ -235,7 +229,7 @@
         <!--个人中心-->
         <scene sceneID="CxF-LY-r0P">
             <objects>
-                <viewController id="PDs-Lt-pbm" customClass="MainView" customModule="NCar_X" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PDs-Lt-pbm" customClass="MainView" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yxy-qN-68v"/>
                         <viewControllerLayoutGuide type="bottom" id="9jP-iy-AcR"/>
@@ -283,11 +277,14 @@
         <!--首页-->
         <scene sceneID="EdZ-7R-tGs">
             <objects>
-                <navigationController id="NNS-JX-vD4" sceneMemberID="viewController">
+                <navigationController id="NNS-JX-vD4" customClass="HomeNaviController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" id="k0m-pQ-4oi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nB3-fI-tON">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="NNS-JX-vD4" id="h48-ee-nIY"/>
+                        </connections>
                     </navigationBar>
                     <connections>
                         <segue destination="aKE-Qh-zh3" kind="relationship" relationship="rootViewController" id="2it-Ig-xFZ"/>
