@@ -12,6 +12,12 @@ class MainView: UIViewController,UITableViewDelegate,UITableViewDataSource{
     @IBOutlet weak var nav: UINavigationBar!
     
     @IBOutlet weak var _tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad();
+        self.automaticallyAdjustsScrollViewInsets = false;
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
         return 4;
     }

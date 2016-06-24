@@ -17,15 +17,23 @@
 		AD2194991D05114900F45A21 /* NCar_XUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194981D05114900F45A21 /* NCar_XUITests.swift */; };
 		AD2194A91D052CE700F45A21 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194A81D052CE700F45A21 /* MainView.swift */; };
 		AD2194AC1D05803900F45A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2194AA1D05803900F45A21 /* Main.storyboard */; };
+		AD224B951D1BC1EC00AFD8D3 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD224B931D1BC1EC00AFD8D3 /* PackageCell.xib */; };
+		AD224BA41D1C042300AFD8D3 /* config in Resources */ = {isa = PBXBuildFile; fileRef = AD224BA31D1C042300AFD8D3 /* config */; };
+		AD224BB01D1C05A500AFD8D3 /* surprise_camerabutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BA61D1C05A500AFD8D3 /* surprise_camerabutton@3x.png */; };
+		AD224BB11D1C05A500AFD8D3 /* surprise_camerabutton_highlighted@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BA71D1C05A500AFD8D3 /* surprise_camerabutton_highlighted@3x.png */; };
+		AD224BB21D1C05A500AFD8D3 /* tabbar_discover@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BA81D1C05A500AFD8D3 /* tabbar_discover@3x.png */; };
+		AD224BB31D1C05A500AFD8D3 /* tabbar_discover_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BA91D1C05A500AFD8D3 /* tabbar_discover_selected@3x.png */; };
+		AD224BB41D1C05A500AFD8D3 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAA1D1C05A500AFD8D3 /* tabbar_home@3x.png */; };
+		AD224BB51D1C05A500AFD8D3 /* tabbar_home_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAB1D1C05A500AFD8D3 /* tabbar_home_selected@3x.png */; };
+		AD224BB61D1C05A500AFD8D3 /* tabbar_message_center@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAC1D1C05A500AFD8D3 /* tabbar_message_center@3x.png */; };
+		AD224BB71D1C05A500AFD8D3 /* tabbar_message_center_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAD1D1C05A500AFD8D3 /* tabbar_message_center_selected@3x.png */; };
+		AD224BB81D1C05A500AFD8D3 /* tabbar_profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAE1D1C05A500AFD8D3 /* tabbar_profile@3x.png */; };
+		AD224BB91D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAF1D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png */; };
 		AD2C3FC11D0EB36B007BDB2D /* NHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */; };
 		AD2C3FC31D0EBF0C007BDB2D /* HomeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */; };
 		AD8A5AE91D1696A90033AAAE /* CarMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */; };
 		AD9672841D191D5E002BB801 /* MultTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9672821D191D5E002BB801 /* MultTableView.xib */; };
 		ADE017831D17C8B300D0E256 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE017821D17C8B300D0E256 /* SwiftyJSON.swift */; };
-		ADE017881D17CA4F00D0E256 /* craftRecommend.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017841D17CA4F00D0E256 /* craftRecommend.json */; };
-		ADE017891D17CA4F00D0E256 /* materialTexture.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017851D17CA4F00D0E256 /* materialTexture.json */; };
-		ADE0178A1D17CA4F00D0E256 /* packageDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017861D17CA4F00D0E256 /* packageDetail.json */; };
-		ADE0178B1D17CA4F00D0E256 /* partsParam.json in Resources */ = {isa = PBXBuildFile; fileRef = ADE017871D17CA4F00D0E256 /* partsParam.json */; };
 		ADE982D11D13E468005955F7 /* NTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE982CF1D13E468005955F7 /* NTableViewCell.swift */; };
 		ADE982DC1D13E741005955F7 /* PackageChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE982D51D13E741005955F7 /* PackageChooseView.xib */; };
 		ADE982DD1D13E741005955F7 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE982D71D13E741005955F7 /* SwitchCell.xib */; };
@@ -65,16 +73,24 @@
 		AD21949A1D05114900F45A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD2194A81D052CE700F45A21 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AD2194AB1D05803900F45A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD224B941D1BC1EC00AFD8D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackageCell.xib; sourceTree = "<group>"; };
+		AD224BA31D1C042300AFD8D3 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = Resource/config; sourceTree = "<group>"; };
+		AD224BA61D1C05A500AFD8D3 /* surprise_camerabutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surprise_camerabutton@3x.png"; sourceTree = "<group>"; };
+		AD224BA71D1C05A500AFD8D3 /* surprise_camerabutton_highlighted@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "surprise_camerabutton_highlighted@3x.png"; sourceTree = "<group>"; };
+		AD224BA81D1C05A500AFD8D3 /* tabbar_discover@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discover@3x.png"; sourceTree = "<group>"; };
+		AD224BA91D1C05A500AFD8D3 /* tabbar_discover_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discover_selected@3x.png"; sourceTree = "<group>"; };
+		AD224BAA1D1C05A500AFD8D3 /* tabbar_home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@3x.png"; sourceTree = "<group>"; };
+		AD224BAB1D1C05A500AFD8D3 /* tabbar_home_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home_selected@3x.png"; sourceTree = "<group>"; };
+		AD224BAC1D1C05A500AFD8D3 /* tabbar_message_center@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_message_center@3x.png"; sourceTree = "<group>"; };
+		AD224BAD1D1C05A500AFD8D3 /* tabbar_message_center_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_message_center_selected@3x.png"; sourceTree = "<group>"; };
+		AD224BAE1D1C05A500AFD8D3 /* tabbar_profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_profile@3x.png"; sourceTree = "<group>"; };
+		AD224BAF1D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_profile_selected@3x.png"; sourceTree = "<group>"; };
 		AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHomeController.swift; sourceTree = "<group>"; };
 		AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeData.plist; sourceTree = "<group>"; };
 		AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMainModel.swift; sourceTree = "<group>"; };
 		AD9672831D191D5E002BB801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MultTableView.xib; sourceTree = "<group>"; };
 		ADE017811D17C8B300D0E256 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
 		ADE017821D17C8B300D0E256 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		ADE017841D17CA4F00D0E256 /* craftRecommend.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = craftRecommend.json; path = Resource/craftRecommend.json; sourceTree = "<group>"; };
-		ADE017851D17CA4F00D0E256 /* materialTexture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = materialTexture.json; path = Resource/materialTexture.json; sourceTree = "<group>"; };
-		ADE017861D17CA4F00D0E256 /* packageDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = packageDetail.json; path = Resource/packageDetail.json; sourceTree = "<group>"; };
-		ADE017871D17CA4F00D0E256 /* partsParam.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = partsParam.json; path = Resource/partsParam.json; sourceTree = "<group>"; };
 		ADE982CF1D13E468005955F7 /* NTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTableViewCell.swift; sourceTree = "<group>"; };
 		ADE982D61D13E741005955F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackageChooseView.xib; sourceTree = "<group>"; };
 		ADE982D81D13E741005955F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SwitchCell.xib; sourceTree = "<group>"; };
@@ -108,10 +124,9 @@
 		AD00D6E91D0FD877005E8E00 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				ADE017841D17CA4F00D0E256 /* craftRecommend.json */,
-				ADE017851D17CA4F00D0E256 /* materialTexture.json */,
-				ADE017861D17CA4F00D0E256 /* packageDetail.json */,
-				ADE017871D17CA4F00D0E256 /* partsParam.json */,
+				AD224BA51D1C05A500AFD8D3 /* tab */,
+				AD224BA31D1C042300AFD8D3 /* config */,
+				AD224B931D1BC1EC00AFD8D3 /* PackageCell.xib */,
 				ADE982D51D13E741005955F7 /* PackageChooseView.xib */,
 				ADE982D71D13E741005955F7 /* SwitchCell.xib */,
 				AD2194AA1D05803900F45A21 /* Main.storyboard */,
@@ -177,6 +192,24 @@
 				AD21949A1D05114900F45A21 /* Info.plist */,
 			);
 			path = "NCar-XUITests";
+			sourceTree = "<group>";
+		};
+		AD224BA51D1C05A500AFD8D3 /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				AD224BA61D1C05A500AFD8D3 /* surprise_camerabutton@3x.png */,
+				AD224BA71D1C05A500AFD8D3 /* surprise_camerabutton_highlighted@3x.png */,
+				AD224BA81D1C05A500AFD8D3 /* tabbar_discover@3x.png */,
+				AD224BA91D1C05A500AFD8D3 /* tabbar_discover_selected@3x.png */,
+				AD224BAA1D1C05A500AFD8D3 /* tabbar_home@3x.png */,
+				AD224BAB1D1C05A500AFD8D3 /* tabbar_home_selected@3x.png */,
+				AD224BAC1D1C05A500AFD8D3 /* tabbar_message_center@3x.png */,
+				AD224BAD1D1C05A500AFD8D3 /* tabbar_message_center_selected@3x.png */,
+				AD224BAE1D1C05A500AFD8D3 /* tabbar_profile@3x.png */,
+				AD224BAF1D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png */,
+			);
+			name = tab;
+			path = Resource/tab;
 			sourceTree = "<group>";
 		};
 		ADE017801D17C8B300D0E256 /* SwiftyJson */ = {
@@ -294,16 +327,24 @@
 			files = (
 				AD2194831D05114900F45A21 /* LaunchScreen.storyboard in Resources */,
 				ADE982DD1D13E741005955F7 /* SwitchCell.xib in Resources */,
-				ADE017891D17CA4F00D0E256 /* materialTexture.json in Resources */,
-				ADE0178B1D17CA4F00D0E256 /* partsParam.json in Resources */,
-				ADE0178A1D17CA4F00D0E256 /* packageDetail.json in Resources */,
+				AD224BB01D1C05A500AFD8D3 /* surprise_camerabutton@3x.png in Resources */,
 				AD00D6EF1D0FDE44005E8E00 /* iTunesArtwork in Resources */,
 				AD00D6EB1D0FD925005E8E00 /* Images.xcassets in Resources */,
+				AD224BB71D1C05A500AFD8D3 /* tabbar_message_center_selected@3x.png in Resources */,
+				AD224BB61D1C05A500AFD8D3 /* tabbar_message_center@3x.png in Resources */,
+				AD224BB81D1C05A500AFD8D3 /* tabbar_profile@3x.png in Resources */,
+				AD224BB91D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png in Resources */,
+				AD224BB51D1C05A500AFD8D3 /* tabbar_home_selected@3x.png in Resources */,
 				ADE982DC1D13E741005955F7 /* PackageChooseView.xib in Resources */,
-				ADE017881D17CA4F00D0E256 /* craftRecommend.json in Resources */,
 				AD2194AC1D05803900F45A21 /* Main.storyboard in Resources */,
+				AD224BA41D1C042300AFD8D3 /* config in Resources */,
 				AD2C3FC31D0EBF0C007BDB2D /* HomeData.plist in Resources */,
+				AD224BB31D1C05A500AFD8D3 /* tabbar_discover_selected@3x.png in Resources */,
+				AD224B951D1BC1EC00AFD8D3 /* PackageCell.xib in Resources */,
+				AD224BB21D1C05A500AFD8D3 /* tabbar_discover@3x.png in Resources */,
 				AD9672841D191D5E002BB801 /* MultTableView.xib in Resources */,
+				AD224BB11D1C05A500AFD8D3 /* surprise_camerabutton_highlighted@3x.png in Resources */,
+				AD224BB41D1C05A500AFD8D3 /* tabbar_home@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +426,14 @@
 				AD2194AB1D05803900F45A21 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD224B931D1BC1EC00AFD8D3 /* PackageCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD224B941D1BC1EC00AFD8D3 /* Base */,
+			);
+			name = PackageCell.xib;
 			sourceTree = "<group>";
 		};
 		AD9672821D191D5E002BB801 /* MultTableView.xib */ = {

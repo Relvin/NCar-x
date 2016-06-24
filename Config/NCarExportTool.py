@@ -39,7 +39,11 @@ def readConfExecl(_fileName,outPath):
         for rc in range(beginColum,ws.max_column + 1):
             value = ws.cell(row=rx,column=rc).value
             if value is not None :
-                cell_value[key_value_dict[rc]] = value
+                if key_value_dict[rc] == "AdditionalValue":
+                    arrValue = json.loads(value)
+                    cell_value[key_value_dict[rc]] = arrValue
+                else :
+                    cell_value[key_value_dict[rc]] = value
 
         main_dict[ID] = cell_value
 

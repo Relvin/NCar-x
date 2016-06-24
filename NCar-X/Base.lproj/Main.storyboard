@@ -16,8 +16,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="NNS-JX-vD4" kind="relationship" relationship="viewControllers" id="AEI-bb-JIx"/>
                         <segue destination="qyn-DE-sBg" kind="relationship" relationship="viewControllers" id="S50-DY-cor"/>
+                        <segue destination="NNS-JX-vD4" kind="relationship" relationship="viewControllers" id="AEI-bb-JIx"/>
                         <segue destination="5uC-OB-pex" kind="relationship" relationship="viewControllers" id="RNX-jb-DNH"/>
                         <segue destination="hLY-sH-FLN" kind="relationship" relationship="viewControllers" id="ahs-Ac-UNd"/>
                         <segue destination="YKN-1Z-ia9" kind="relationship" relationship="viewControllers" id="OqU-dM-GGG"/>
@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-1096" y="-1339"/>
         </scene>
-        <!--信息-->
+        <!--首页-->
         <scene sceneID="aeQ-dL-ZR1">
             <objects>
                 <viewController id="qyn-DE-sBg" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="44" id="UzZ-Bm-OAk"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Home" id="jax-CR-Ov3"/>
+                                    <navigationItem title="主页" id="jax-CR-Ov3"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -57,13 +57,13 @@
                             <constraint firstItem="kzy-bu-GnT" firstAttribute="leading" secondItem="7oh-W0-PvO" secondAttribute="leadingMargin" constant="-20" id="x5z-VQ-fo1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="信息" id="R2s-hz-dCZ"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar_home.png" selectedImage="tabbar_home_selected.png" id="R2s-hz-dCZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XZy-yC-EfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-138" y="-155"/>
         </scene>
-        <!--首页-->
+        <!--信息-->
         <scene sceneID="b20-7R-ZLM">
             <objects>
                 <viewController id="aKE-Qh-zh3" customClass="NHomeController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,8 +153,8 @@
                             <constraint firstItem="0Yl-bC-pey" firstAttribute="top" secondItem="Omf-GF-g7d" secondAttribute="bottom" constant="12" id="lX7-j0-vnd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="首页" id="sTe-um-O7G"/>
-                    <navigationItem key="navigationItem" title="首页" id="hj4-Y2-csJ"/>
+                    <tabBarItem key="tabBarItem" title="信息" image="tabbar_message_center.png" selectedImage="tabbar_message_center_selected.png" id="sTe-um-O7G"/>
+                    <navigationItem key="navigationItem" title="信息" id="hj4-Y2-csJ"/>
                     <connections>
                         <outlet property="_nameLabel" destination="zWk-0Q-sce" id="HOv-oz-46W"/>
                         <outlet property="_tableView" destination="0Yl-bC-pey" id="zfD-B8-8zl"/>
@@ -180,7 +180,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="消息" id="jTt-dq-BWz"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="tabbar_message_center.png" selectedImage="tabbar_message_center_selected.png" id="jTt-dq-BWz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6xH-cR-rc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,7 +216,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="拍照" id="SG3-Tq-yE5"/>
+                    <tabBarItem key="tabBarItem" title="拍照" image="surprise_camerabutton.png" selectedImage="surprise_camerabutton_highlighted.png" id="SG3-Tq-yE5"/>
                     <connections>
                         <outlet property="_cameraView" destination="xqN-2j-Ujo" id="7Na-yz-8pz"/>
                         <outlet property="imagea" destination="wO6-4R-k7R" id="2Bv-Ot-x44"/>
@@ -264,7 +264,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="个人中心" id="yqm-qa-Rh7"/>
+                    <tabBarItem key="tabBarItem" title="个人中心" image="tabbar_profile.png" selectedImage="tabbar_profile_selected.png" id="yqm-qa-Rh7"/>
                     <navigationItem key="navigationItem" title="个人中心" id="f4c-8I-145"/>
                     <connections>
                         <outlet property="_tableView" destination="KR1-tu-49m" id="d0R-LF-0T1"/>
@@ -274,11 +274,11 @@
             </objects>
             <point key="canvasLocation" x="563" y="-1339"/>
         </scene>
-        <!--首页-->
+        <!--信息-->
         <scene sceneID="EdZ-7R-tGs">
             <objects>
-                <navigationController id="NNS-JX-vD4" customClass="HomeNaviController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="k0m-pQ-4oi"/>
+                <navigationController id="NNS-JX-vD4" userLabel="信息" customClass="HomeNaviController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="信息" id="k0m-pQ-4oi" userLabel="信息"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nB3-fI-tON">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -312,4 +312,14 @@
             <point key="canvasLocation" x="-190" y="-1339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="surprise_camerabutton.png" width="25" height="25"/>
+        <image name="surprise_camerabutton_highlighted.png" width="25" height="25"/>
+        <image name="tabbar_home.png" width="30" height="30"/>
+        <image name="tabbar_home_selected.png" width="30" height="30"/>
+        <image name="tabbar_message_center.png" width="30" height="30"/>
+        <image name="tabbar_message_center_selected.png" width="30" height="30"/>
+        <image name="tabbar_profile.png" width="30" height="30"/>
+        <image name="tabbar_profile_selected.png" width="30" height="30"/>
+    </resources>
 </document>

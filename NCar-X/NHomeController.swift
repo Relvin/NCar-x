@@ -19,7 +19,7 @@ class HomeNaviController : UINavigationController,UINavigationBarDelegate{
     }
 };
 
-class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
+class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,CellDelegateProtocol{
     
     @IBOutlet weak var _tableView: UITableView!
     @IBOutlet weak var _textField: UITextField!
@@ -29,14 +29,15 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     @IBOutlet var rootView: UIView!
     var tapGestureRecognizer: UITapGestureRecognizer!
     
-    var selectedIndex: NSIndexPath!
+    var selectedIndex: Int = 0
+    var subIndex: Int = -1
     
     var isOpen = false;
     
     var _curTableViewCell: UITableViewCell!
     
     var _homeData : ComponentModel!
-    var _selectFieldCell : NTableViewCell!
+
     var _firstLoad : Bool = true;
     
     
@@ -50,6 +51,9 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         
         view.addGestureRecognizer(tapGestureRecognizer)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(UIViewController.updateViewConstraints),
+                                                         name: "SwitchChange", object: nil)
+        
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView(_tableView, didSelectRowAtIndexPath: indexPath);
         
@@ -62,34 +66,49 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         _tableView.reloadData();
     }
     
+    func cellTableTouched(cellInfo:subComponentModel ,subIndex : Int)
+    {
+        selectedIndex = cellInfo.id
+        self.subIndex = subIndex;
+        
+        var unit = ""
+        if (subIndex != -1)
+        {
+            
+            let subId = cellInfo.getAdditionalIdByIndex(subIndex);
+            unit = cellInfo.getAdditionalUnitById(subId);
+            _textField.text = cellInfo.getAdditionalValueById(subId);
+            _unitLabel.text = unit;
+            _nameLabel.text = cellInfo.getAdditionalNameById(subId);
+        }
+        else
+        {
+            unit = cellInfo.unit;
+            _textField.text = cellInfo.value;
+            _unitLabel.text = unit;
+            _nameLabel.text = cellInfo.name;
+        }
+        
+        if (unit == "")
+        {
+            _textField.keyboardType = UIKeyboardType.ASCIICapable;
+        }
+        else{
+            _textField.keyboardType = UIKeyboardType.NumberPad;
+        }
+        if (_firstLoad == false)
+        {
+            _textField.becomeFirstResponder()
+        }
+        _firstLoad = false;
+    }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-//        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath);
-//        return cell.frame.size.height;
+        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! NTableViewCell;
+//        let section = indexPath.section;
         
-        var row = 0;
-        if (selectedIndex != nil){
-            row = selectedIndex.section
-        }
-        if (selectedIndex != nil && indexPath.section == selectedIndex.section ) {
-            if (isOpen == true) {
-                
-                let f:CGFloat = 50.0;
-                
-                if (indexPath.row == _homeData.count - 1){
-                    
-                    return 153.8+(f - 21);
-                }
-                
-                return 155+(f - 21);
-                
-            }else{
-                
-                return 67;
-            }
-            
-        }
-        return 67;
+        return cell.getCellHeight();
         
     }
     
@@ -98,7 +117,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
+
         return 1;
     }
 
@@ -108,53 +127,15 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         let section = indexPath.section;
         let cellData = _homeData.getPartById(section);
         let type = cellData.type
+//        let cell = _tableView.cellForRowAtIndexPath(indexPath) as! NTableViewCell;
         
         switch type {
         case .textFieldCell:
-            let cell = _tableView.cellForRowAtIndexPath(indexPath);
-            _nameLabel.text = cell?.textLabel?.text;
-            let unit = cellData.unit;
-            _textField.text = cellData.value;
-            _unitLabel.text = unit;
-            if (unit == "")
-            {
-                _textField.keyboardType = UIKeyboardType.ASCIICapable;
-            }
-            else{
-                _textField.keyboardType = UIKeyboardType.NumberPad;
-            }
-            _selectFieldCell = (cell as? NTableViewCell);
-            if (_firstLoad == false)
-            {
-                _textField.becomeFirstResponder()
-            }
-            _firstLoad = false;
+            
+            self.cellTableTouched(cellData, subIndex: -1);
             break;
         case .addSizeCell:
             
-            //记下选中的索引
-
-            var indexPaths:[NSIndexPath] = [indexPath];
-            if (self.selectedIndex != nil && indexPath.section == selectedIndex.section) {
-                isOpen = !isOpen;
-//                NSArray
-                
-                indexPaths.append(selectedIndex);
-                
-            }else if (self.selectedIndex != nil && indexPath.section != selectedIndex.section) {
-            
-                indexPaths.append(selectedIndex);
-                isOpen = true;
-            }
-            if (self.selectedIndex == nil)
-            {
-                isOpen = true;
-            }
-            //记下选中的索引
-            self.selectedIndex = indexPath;
-            
-
-            tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade);
             break;
             
         case .packageCell:
@@ -214,23 +195,21 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
             }
             break;
         case .addSizeCell:
-            cell = tableView.dequeueReusableCellWithIdentifier("switch");
+            cell = tableView.dequeueReusableCellWithIdentifier("SwitchCell");
             if (cell == nil){
                 cell = NSBundle.mainBundle().loadNibNamed("SwitchCell", owner: nil, options: nil).first as? SwitchCell
                 
                 cell?.frame = CGRect(x: 0, y: 0, width: self._tableView.frame.width, height: cell.frame.height)
                 cell?.center = self._tableView.center
-                let mySwitch = UISwitch();
-                mySwitch.addTarget(self, action: #selector(NHomeController.stateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
-
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
             }
             break;
         case .packageCell:
-            cell = tableView.dequeueReusableCellWithIdentifier("pick");
+            cell = tableView.dequeueReusableCellWithIdentifier("PackageCell");
             if (cell == nil){
-                cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "pick");
-                cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+                cell =   NSBundle.mainBundle().loadNibNamed("PackageCell", owner: nil, options: nil).first as? PackageCell
+                cell?.frame = CGRect(x: 0, y: 0, width: self._tableView.frame.width, height: cell.frame.height)
+                cell?.center = self._tableView.center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
             }
             break;
@@ -270,10 +249,10 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
             
         }
 //
-        
-        (cell as! NTableViewCell).setCellInfo(cellData!);
-        
-//        cell!.textLabel!.text = cellLabel[section];
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        let ncell = (cell as! NTableViewCell)
+        ncell.setCellInfo(cellData!);
+        ncell.setCellDelegate(self);
         
         
         
@@ -281,14 +260,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         return cell!;
     }
     
-    func stateChanged(switchState: UISwitch) {
-        if switchState.on {
-//            myTextField.text = "The Switch is On"
-        } else {
-//            myTextField.text = "The Switch is Off"
-        }
-        
-    }
+    
     @IBAction func editingDidBegin(sender: AnyObject) {
         tapGestureRecognizer.cancelsTouchesInView = true;
         (sender as! UITextField).text = "";
@@ -297,18 +269,24 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     @IBAction func editingDidEnd(sender: AnyObject) {
         var inputStr = (sender as! UITextField).text;
         
-        if ((_selectFieldCell) != nil)
+        
+        let partData = _homeData.getPartById(selectedIndex)//CarMainModel.sharedInstance.getComponentInfo().getPartById(_selectFieldCell.index)
+        if (inputStr == "" && partData.unit != "")
         {
-            
-            let partData = CarMainModel.sharedInstance.getComponentInfo().getPartById(_selectFieldCell.index)
-            if (inputStr == "" && partData.unit != "")
-            {
-                inputStr = "0";
-            }
-            
-            partData.value = inputStr!;
-            _selectFieldCell.detailTextLabel?.text = inputStr! + partData.unit;
+            inputStr = "0";
         }
+        if (subIndex == -1)
+        {
+            partData.value = inputStr!;
+        }
+        else{
+            let subId = partData.getAdditionalIdByIndex(subIndex);
+            partData.setAdditionalValueById(subId, value: inputStr!);
+        }
+        
+        _tableView.reloadData();
+//            _selectFieldCell.detailTextLabel?.text = inputStr! + partData.unit;
+//        }
         
         
     }
@@ -358,7 +336,7 @@ class packageController: UIViewController,UIPickerViewDelegate,UIPickerViewDataS
         _titleLabel.text = _infoDict[String(index)]!["Name"] as? String
         _textLabel.text = _infoDict[String(index)]!["Text"] as? String
 //        _textLabel.sizeToFit();
-        
+        self.title = _cellInfo.name;
     }
     
     override func didReceiveMemoryWarning() {
@@ -394,13 +372,14 @@ class packageController: UIViewController,UIPickerViewDelegate,UIPickerViewDataS
 class MultTablViewController : UIViewController ,UITableViewDelegate,UITableViewDataSource
 {
     @IBOutlet weak var _tableView: UITableView!
-    var _cellInfo : subComponentModel?
+    var _cellInfo : subComponentModel!
     var _infoDict : NSDictionary!;
+    var _chooseList : [Int];
     
     init(cellInfo : subComponentModel?, nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         self._cellInfo = cellInfo!;
         _infoDict = CarMainModel.sharedInstance.getConfigInfoByName((cellInfo?.subForm)!);
-        
+        self._chooseList = cellInfo!.typeValue;
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil);
     }
     
@@ -410,7 +389,8 @@ class MultTablViewController : UIViewController ,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad();
-        
+        self.automaticallyAdjustsScrollViewInsets = false;
+        self.title = _cellInfo.name;
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int{
@@ -424,9 +404,13 @@ class MultTablViewController : UIViewController ,UITableViewDelegate,UITableView
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        let section = indexPath.section;
-        _cellInfo?.typeValue = [section];
-        self.navigationController?.popViewControllerAnimated(true);
+        if (self._cellInfo?.multChoose == false)
+        {
+            let section = indexPath.section;
+            _cellInfo?.typeValue = [section];
+            self.navigationController?.popViewControllerAnimated(true);
+        }
+        
     }
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
@@ -435,11 +419,51 @@ class MultTablViewController : UIViewController ,UITableViewDelegate,UITableView
         var cell = tableView.dequeueReusableCellWithIdentifier("textField");
         if (cell == nil){
             cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
-            
+            if (self._cellInfo?.multChoose == true)
+            {
+                
+                let mySwitch = NSwitch();
+                mySwitch.addTarget(self, action: #selector(MultTablViewController.stateChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
+
+                cell?.accessoryView = mySwitch;
+                cell?.selectionStyle = UITableViewCellSelectionStyle.None;
+            }
         }
         cell?.textLabel?.text = _infoDict[String(section)]!["Name"] as? String;
+        
+        if (self._cellInfo?.multChoose == true)
+        {
+            var switchOn  = false;
+            if(_chooseList.contains(section))
+            {
+                switchOn = true;
+            }
+            let mySwitch = (cell?.accessoryView as! NSwitch);
+            mySwitch.setOn(switchOn, animated: false);
+            mySwitch.index = section;
+        }
         return cell!;
+    }
+    
+    func stateChanged(switchState: NSwitch) {
+        let index  = switchState.index
+        if switchState.on {
+            if (_chooseList.contains(switchState.index) == false)
+            {
+                _chooseList.append(index);
+            }
+        } else {
+            if (_chooseList.contains(index) == true)
+            {
+                _chooseList.removeAtIndex(_chooseList.indexOf(index)!)
+            }
+        }
+        _chooseList.sortInPlace();
+        _cellInfo.typeValue = _chooseList;
     }
 }
 
+class NSwitch: UISwitch {
+    var index  = 0
+}
 

@@ -47,7 +47,7 @@ class CarMainModel
         if (config != nil){
             self._configDict["partsParam"] = config;
             for (_,value) in config! {
-                let subForm = value["subForm"] as? String
+                let subForm = value["SubForm"] as? String
                 if (subForm != nil)
                 {
                     let subConf = self.loadConfig(subForm!);
@@ -56,13 +56,22 @@ class CarMainModel
                         self._configDict[subForm!] = subConf;
                     }
                 }
+                let additional = value["AdditionalForm"] as? String
+                if (additional != nil)
+                {
+                    let additionalConf = self.loadConfig(additional!);
+                    if (additionalConf != nil)
+                    {
+                        self._configDict[additional!] = additionalConf;
+                    }
+                }
             }
         }
         
     }
     
     func loadConfig(fileName:String)-> [String : AnyObject]? {
-        if let file = NSBundle(forClass:ComponentModel.self).pathForResource(fileName, ofType: "json") {
+        if let file = NSBundle(forClass:ComponentModel.self).pathForResource("config/" + fileName, ofType: "json") {
             let testData = NSData(contentsOfFile: file)
             let json = JSON(data:testData!)
             return parserJson(json) as? [String : AnyObject];
@@ -144,24 +153,85 @@ class subComponentModel: NSObject {
     var unit : String = ""
     var typeValue : [Int] = [0]
     var force : Bool = false
+    var open : Bool = false
     var subForm : String = ""
+    var additionalForm : String = ""
+    var multChoose : Bool = false
     var content : String = ""
+    var additional : [Int : String] = [:]
     
     init(info: NSDictionary) {
         super.init();
         id = info["ID"] as! Int;
         name = info["Name"] as! String;
         type = subComponentType(rawValue: Int(info["Type"] as! String)!)!;
-        let subForm = info["subForm"] as? String
+        let subForm = info["SubForm"] as? String
         if (subForm != nil){
             self.subForm = subForm!;
         }
+        
+        let additionalForm = info["AdditionalForm"] as? String
+        if (additionalForm != nil){
+            self.additionalForm = additionalForm!;
+            let additionalList : [Int] = info["AdditionalValue"] as! Array;
+            
+            for value in additionalList
+            {
+                additional[value] = "";
+            }
+            
+        }
+        
         let unit = info["Unit"] as? String
         if (unit != nil){
             self.unit = unit!;
             value = "0"
         }
         
+        
+        if ((info["MultChoose"] as? String) == "1"){
+            self.multChoose = true
+        }
+        
+    }
+    
+    func getAdditionalCount() -> Int{
+        return additional.count
+    }
+    
+    func getAdditionalValueById(id : Int) -> String {
+        return additional[id]!;
+    }
+    
+    func getAdditionalIdByIndex(index : Int) ->Int {
+        var keysList : [Int] = (additional as NSDictionary).allKeys as! [Int];
+        keysList.sortInPlace();
+        
+        return keysList[index];
+    }
+    
+    func getAdditionalNameById(id : Int) -> String {
+        var addtionalConf = CarMainModel.sharedInstance.getConfigInfoByName(additionalForm);
+        if (addtionalConf.count > id)
+        {
+            return (addtionalConf[String(id)]!["Name"] as? String)!;
+        }
+        return "";
+        
+    }
+    
+    func getAdditionalUnitById(id : Int) -> String {
+        var addtionalConf = CarMainModel.sharedInstance.getConfigInfoByName(additionalForm);
+        if (addtionalConf.count > id)
+        {
+            return (addtionalConf[String(id)]!["Unit"] as? String)!;
+        }
+        return "";
+        
+    }
+
+    func setAdditionalValueById(id : Int,value : String) {
+        self.additional.updateValue(value, forKey: id);
     }
     
 }
