@@ -8,26 +8,17 @@
 
 import UIKit
 
-
-class HomeNaviController : UINavigationController,UINavigationBarDelegate{
-    var naviBar : UINavigationBar!;
-    
-    internal func navigationBar(navigationBar: UINavigationBar, didPopItem item: UINavigationItem){
-//        self.rootViewController;
-//        self.topViewController?.updateViewConstraints();
-//        (self.topViewController as? NHomeController)?.refreshLayer();
-    }
-};
-
 class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,CellDelegateProtocol{
     
-    @IBOutlet weak var _tableView: UITableView!
+    @IBOutlet weak var _inputView: UIView!
+    @IBOutlet weak var _tableContainer: UIView!
+    @IBOutlet weak var touchView: UIControl!
+    var _tableView: UITableView!
     @IBOutlet weak var _textField: UITextField!
     @IBOutlet weak var _nameLabel: UILabel!
     @IBOutlet weak var _unitLabel: UILabel!
     
     @IBOutlet var rootView: UIView!
-    var tapGestureRecognizer: UITapGestureRecognizer!
     
     var selectedIndex: Int = 0
     var subIndex: Int = -1
@@ -40,30 +31,94 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
 
     var _firstLoad : Bool = true;
     
+    var _defalutFontName : String = ""
+    var _defalutFontSize : CGFloat = 14
+    var keyboardShow : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        touchView.hidden = true;
+        self.automaticallyAdjustsScrollViewInsets = false;
         _homeData = CarMainModel.sharedInstance.getComponentInfo();
         
-        _tableView.reloadData();
-
-        tapGestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(NHomeController.keyboardHide(_:)) );
+        _defalutFontName = (_textField.font?.fontName)!;
+        _defalutFontSize = (_textField.font?.lineHeight)!;
         
-        view.addGestureRecognizer(tapGestureRecognizer)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(UIViewController.updateViewConstraints),
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(NHomeController.refreshLayer),
                                                          name: "SwitchChange", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NHomeController.keyboardWillShow), name: UIKeyboardWillShowNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(NHomeController.textDidBeginEditing),
+                                                         name: UITextViewTextDidBeginEditingNotification, object: nil)
+        _tableView = UITableView(frame:CGRect(x: 0,y: 0,width: 0,height: 0),style: UITableViewStyle.Plain);
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableContainer.addSubview(_tableView);
+        _tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
+        
+        _tableView.backgroundColor = UIColor.clearColor();
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView(_tableView, didSelectRowAtIndexPath: indexPath);
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.png")!);
     }
     
-    override func updateViewConstraints (){
-        super.updateViewConstraints();
-        
+    override func viewDidAppear(animated: Bool) {
+        let frame = _tableContainer.frame;
+        let inputFrame = _inputView.frame;
+        _tableView.frame = CGRect(x: 0,y: inputFrame.height,width: frame.width,height: frame.height - inputFrame.height);
+        self.refreshLayer();
+    }
+    
+    func refreshLayer() {
         _homeData = CarMainModel.sharedInstance.getComponentInfo();
         _tableView.reloadData();
+    }
+    
+    func textDidBeginEditing(pSender: AnyObject) {
+//        self.animateTextField(offset);
+    }
+    func keyboardWillShow(aNotification: NSNotification) {
+        
+        let userinfo: NSDictionary = aNotification.userInfo!
+        let nsValue = userinfo.objectForKey(UIKeyboardFrameEndUserInfoKey)
+        let keyboardRec = nsValue?.CGRectValue()
+        let height = keyboardRec?.size.height
+        
+        
+        var offset = height!;
+        if (touchView.hidden == false)
+        {
+            let indexPath = NSIndexPath(forRow: 0, inSection: selectedIndex)
+            let rectIntable = _tableView.rectForRowAtIndexPath(indexPath);
+            let rect = _tableView.convertRect(rectIntable, toView: self.view);
+            
+            offset -= (self.view.frame.height - rect.origin.y - rect.height);
+        }
+        else{
+            touchView.hidden = false;
+            offset -= 50;
+        }
+        
+        self.animateTextField(offset);
+
+    }
+    func animateTextField(yOffset : CGFloat) {
+        
+        if (yOffset >= 0)
+        {
+            let orgRect = _tableView.frame;
+            UIView.beginAnimations("Animation", context: nil);
+            UIView.setAnimationBeginsFromCurrentState(true);
+            UIView.setAnimationDuration(0.5);
+            
+            _tableView.frame = CGRect(x: orgRect.origin.x,y: -yOffset,width: orgRect.width,height: orgRect.height);
+            
+            UIView.commitAnimations();
+            
+        }
     }
     
     func cellTableTouched(cellInfo:subComponentModel ,subIndex : Int)
@@ -72,19 +127,20 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         self.subIndex = subIndex;
         
         var unit = ""
+        var text = "";
         if (subIndex != -1)
         {
             
             let subId = cellInfo.getAdditionalIdByIndex(subIndex);
             unit = cellInfo.getAdditionalUnitById(subId);
-            _textField.text = cellInfo.getAdditionalValueById(subId);
+            text = cellInfo.getAdditionalValueById(subId);
             _unitLabel.text = unit;
             _nameLabel.text = cellInfo.getAdditionalNameById(subId);
         }
         else
         {
             unit = cellInfo.unit;
-            _textField.text = cellInfo.value;
+            text = cellInfo.value;
             _unitLabel.text = unit;
             _nameLabel.text = cellInfo.name;
         }
@@ -92,21 +148,33 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         if (unit == "")
         {
             _textField.keyboardType = UIKeyboardType.ASCIICapable;
+            _textField.font = UIFont(name: "",size: _defalutFontSize);
+            _textField.placeholder = "INPUT"
         }
         else{
-            _textField.keyboardType = UIKeyboardType.NumberPad;
+            _textField.keyboardType = UIKeyboardType.DecimalPad;
+            _textField.font = UIFont(name : _defalutFontName,size: _defalutFontSize + 1);
+            _textField.placeholder = "0"
         }
+        
+        
         if (_firstLoad == false)
         {
+            touchView.hidden = false;
             _textField.becomeFirstResponder()
         }
+        if (text != "0")
+        {
+            _textField.text = text;
+        }
+        
         _firstLoad = false;
+        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! NTableViewCell;
-//        let section = indexPath.section;
         
         return cell.getCellHeight();
         
@@ -127,7 +195,6 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         let section = indexPath.section;
         let cellData = _homeData.getPartById(section);
         let type = cellData.type
-//        let cell = _tableView.cellForRowAtIndexPath(indexPath) as! NTableViewCell;
         
         switch type {
         case .textFieldCell:
@@ -180,7 +247,6 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     
     internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let section = indexPath.section;
-        
 //        print (_homeData)
         let cellData = _homeData.getPartById(section);
         
@@ -192,6 +258,8 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
             cell = tableView.dequeueReusableCellWithIdentifier("textField");
             if (cell == nil){
                 cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
+                cell.backgroundView = UIImageView(image: UIImage(named: "cellNormal.png"));
+                cell.backgroundColor = UIColor.clearColor()
             }
             break;
         case .addSizeCell:
@@ -202,6 +270,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
                 cell?.frame = CGRect(x: 0, y: 0, width: self._tableView.frame.width, height: cell.frame.height)
                 cell?.center = self._tableView.center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundColor = UIColor.clearColor()
             }
             break;
         case .packageCell:
@@ -211,6 +280,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
                 cell?.frame = CGRect(x: 0, y: 0, width: self._tableView.frame.width, height: cell.frame.height)
                 cell?.center = self._tableView.center
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundColor = UIColor.clearColor()
             }
             break;
         case .materialTextureCell:
@@ -219,24 +289,46 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
                 cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "pick");
                 cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundView = UIImageView(image: UIImage(named: "cellNormal.png"));
+                cell.backgroundColor = UIColor.clearColor()
             }
             break;
             
         case .craftRecommendCell:
-            cell = tableView.dequeueReusableCellWithIdentifier("pick");
+            cell = tableView.dequeueReusableCellWithIdentifier("craftRecommendCell");
             if (cell == nil){
-                cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "pick");
-                cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+                cell =   NSBundle.mainBundle().loadNibNamed("craftRecommendCell", owner: nil, options: nil).first as? craftRecommendCell
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundView = UIImageView(image: UIImage(named: "cellNormal.png"));
+                cell.backgroundColor = UIColor.clearColor()
             }
             break;
         case .contentCell:
-            cell = tableView.dequeueReusableCellWithIdentifier("pick");
+            cell = tableView.dequeueReusableCellWithIdentifier("ContentCell");
             if (cell == nil){
-                cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "pick");
+                cell =   NSBundle.mainBundle().loadNibNamed("ContentCell", owner: nil, options: nil).first as? ContentCell
+                cell?.frame = CGRect(x: 0, y: 0, width: self._tableView.frame.width, height: cell.frame.height)
+                cell?.center = self._tableView.center
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                cell.backgroundView = UIImageView(image: UIImage(named: "cellNormal.png"));
+                cell.backgroundColor = UIColor.clearColor()
+            }
+            break;
+        case .dataCheck:
+            cell = tableView.dequeueReusableCellWithIdentifier("switch");
+            if (cell == nil){
+                cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "switch");
                 cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
                 cell.selectionStyle = UITableViewCellSelectionStyle.None
+                let switchButton = UISwitch();
+                cell.accessoryView = switchButton;
+                cell.backgroundView = UIImageView(image: UIImage(named: "cellNormal.png"));
+                cell.backgroundColor = UIColor.clearColor()
+                switchButton.addTarget(self, action: #selector(NHomeController.switchButtonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             }
+            let switchButton = cell.accessoryView as! UISwitch;
+            switchButton.tag = section;
+            switchButton.setOn(cellData.open, animated: false);
             break;
         default:
             cell = tableView.dequeueReusableCellWithIdentifier("textField");
@@ -244,26 +336,30 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
                 cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
                 let label = UILabel();
                 cell!.accessoryView = label;
+                cell.backgroundColor = UIColor.clearColor()
             }
                 break;
             
         }
-//
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         let ncell = (cell as! NTableViewCell)
         ncell.setCellInfo(cellData!);
         ncell.setCellDelegate(self);
-        
-        
-        
         
         return cell!;
     }
     
     
     @IBAction func editingDidBegin(sender: AnyObject) {
-        tapGestureRecognizer.cancelsTouchesInView = true;
+        keyboardShow = true;
         (sender as! UITextField).text = "";
+    }
+    
+    func switchButtonClicked(switchButton:UISwitch!) {
+        let tag = switchButton.tag;
+        let open = switchButton.on;
+        let cellData = _homeData.getPartById(tag);
+        cellData.open = open;
     }
 
     @IBAction func editingDidEnd(sender: AnyObject) {
@@ -285,24 +381,19 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         }
         
         _tableView.reloadData();
-//            _selectFieldCell.detailTextLabel?.text = inputStr! + partData.unit;
-//        }
         
         
     }
-    func keyboardHide(tip:UITapGestureRecognizer){
-        
-        if(_textField.isFirstResponder())
-        {
-            _textField.resignFirstResponder();
-        }
-        else{
-            tip.cancelsTouchesInView = false;
-        }
+    @IBAction func touchUpInside(sender: AnyObject) {
+        self.view.endEditing(true);
+        self.animateTextField(0);
+        touchView.hidden = true;
         
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
+        keyboardShow = false;
+        touchView.hidden = true;
         _textField.resignFirstResponder();
         return true;
     }

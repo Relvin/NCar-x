@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoViewController" customModule="测量无忧" customModuleProvider="target">
+            <connections>
+                <outlet property="_textView" destination="K45-X0-16M" id="rlS-Mn-hii"/>
+                <outlet property="view" destination="iN0-l3-epB" id="adC-We-X3m"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="敬请期待..." translatesAutoresizingMaskIntoConstraints="NO" id="K45-X0-16M">
+                    <rect key="frame" x="210" y="200" width="180" height="200"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="F1C-ce-HT2"/>
+                        <constraint firstAttribute="width" constant="180" id="jQ0-mE-8Be"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="K45-X0-16M" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dyG-CR-lA2"/>
+                <constraint firstItem="K45-X0-16M" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zFK-n4-Y9D"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

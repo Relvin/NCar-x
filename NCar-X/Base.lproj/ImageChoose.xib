@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageChooseController" customModule="测量无忧" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelBtnItem" destination="2Vd-YZ-vaB" id="VFu-v8-trC"/>
+                <outlet property="collectionView" destination="Q4z-FY-ZDn" id="pDN-ZF-69k"/>
+                <outlet property="confirmBtnItem" destination="PoO-90-McE" id="1uA-ni-rKu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Q4z-FY-ZDn">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fev-bV-mf2">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="HTZ-bw-tpF"/>
+                        <outlet property="delegate" destination="-1" id="hYG-39-x1i"/>
+                    </connections>
+                </collectionView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TN4-ie-mPA">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem title="取消" id="2Vd-YZ-vaB">
+                            <connections>
+                                <action selector="cancelClick:" destination="-1" id="Ceu-NV-eff"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="qew-e4-Il3"/>
+                        <barButtonItem title="确定" id="PoO-90-McE">
+                            <connections>
+                                <action selector="confirmClick:" destination="-1" id="OkM-xD-ZYq"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Q4z-FY-ZDn" secondAttribute="trailing" id="1gg-cF-Qf4"/>
+                <constraint firstItem="Q4z-FY-ZDn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="INj-Rx-4AK"/>
+                <constraint firstAttribute="bottom" secondItem="Q4z-FY-ZDn" secondAttribute="bottom" id="c89-wE-QLR"/>
+                <constraint firstItem="Q4z-FY-ZDn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="j5W-4A-4H6"/>
+                <constraint firstAttribute="bottom" secondItem="TN4-ie-mPA" secondAttribute="bottom" id="lxR-wN-NV9"/>
+                <constraint firstAttribute="trailing" secondItem="TN4-ie-mPA" secondAttribute="trailing" id="yl9-74-P4Z"/>
+                <constraint firstItem="TN4-ie-mPA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zOk-BY-OFq"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

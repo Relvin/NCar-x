@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainView: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class SettingsController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     @IBOutlet weak var nav: UINavigationBar!
     
     @IBOutlet weak var _tableView: UITableView!
@@ -33,7 +33,7 @@ class MainView: UIViewController,UITableViewDelegate,UITableViewDataSource{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         if ((self.navigationController) != nil)
         {
-            let VC = MainView()
+            let VC = InfoViewController(nibName: "default",bundle : nil);
             self.navigationController?.pushViewController(VC, animated: true);
         }
     }

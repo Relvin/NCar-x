@@ -16,9 +16,10 @@ public enum subComponentType: Int {
     case materialTextureCell = 3
     case craftRecommendCell = 4
     case contentCell = 5
+    case dataCheck = 6
 }
 
-let _SingletonSharedInstance = CarMainModel()
+//let _SingletonSharedInstance = CarMainModel()
 
 
 class CarMainModel
@@ -27,9 +28,7 @@ class CarMainModel
     private var _componentModel : ComponentModel!;
     private var _configDict : [String : AnyObject] = [:];
     
-    class var sharedInstance : CarMainModel {
-        return _SingletonSharedInstance
-    }
+    static let sharedInstance = CarMainModel()
     
     override init (){
         super.init();

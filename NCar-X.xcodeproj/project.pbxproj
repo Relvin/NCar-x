@@ -15,7 +15,7 @@
 		AD2194831D05114900F45A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2194811D05114900F45A21 /* LaunchScreen.storyboard */; };
 		AD21948E1D05114900F45A21 /* NCar_XTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21948D1D05114900F45A21 /* NCar_XTests.swift */; };
 		AD2194991D05114900F45A21 /* NCar_XUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194981D05114900F45A21 /* NCar_XUITests.swift */; };
-		AD2194A91D052CE700F45A21 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194A81D052CE700F45A21 /* MainView.swift */; };
+		AD2194A91D052CE700F45A21 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194A81D052CE700F45A21 /* SettingsController.swift */; };
 		AD2194AC1D05803900F45A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2194AA1D05803900F45A21 /* Main.storyboard */; };
 		AD224B951D1BC1EC00AFD8D3 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD224B931D1BC1EC00AFD8D3 /* PackageCell.xib */; };
 		AD224BA41D1C042300AFD8D3 /* config in Resources */ = {isa = PBXBuildFile; fileRef = AD224BA31D1C042300AFD8D3 /* config */; };
@@ -30,9 +30,24 @@
 		AD224BB81D1C05A500AFD8D3 /* tabbar_profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAE1D1C05A500AFD8D3 /* tabbar_profile@3x.png */; };
 		AD224BB91D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAF1D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png */; };
 		AD2C3FC11D0EB36B007BDB2D /* NHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */; };
-		AD2C3FC31D0EBF0C007BDB2D /* HomeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */; };
+		AD3312061D32A45300A5C521 /* DS-DIGIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AD3312051D32A45300A5C521 /* DS-DIGIB.TTF */; };
+		AD620B9A1D30BECB00977393 /* craftRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD620B981D30BECB00977393 /* craftRecommendCell.xib */; };
+		AD6C5A2E1D2256060004452E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6C5A2B1D2256060004452E /* background.png */; };
+		AD6C5A2F1D2256060004452E /* cellNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6C5A2C1D2256060004452E /* cellNormal.png */; };
+		AD6C5A301D2256060004452E /* cellSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6C5A2D1D2256060004452E /* cellSelected.png */; };
+		AD71771F1D34DD9100B67043 /* ImageChooseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD71771E1D34DD9100B67043 /* ImageChooseController.swift */; };
+		AD71772E1D34F1D900B67043 /* ImageChoose.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD71772C1D34F1D900B67043 /* ImageChoose.xib */; };
+		AD7177311D35299F00B67043 /* ZuberImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD71772F1D35299F00B67043 /* ZuberImage.swift */; };
+		AD7177321D35299F00B67043 /* ZuberImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7177301D35299F00B67043 /* ZuberImageCell.swift */; };
 		AD8A5AE91D1696A90033AAAE /* CarMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */; };
 		AD9672841D191D5E002BB801 /* MultTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD9672821D191D5E002BB801 /* MultTableView.xib */; };
+		ADC8265A1D31C71400BBAC92 /* FTPNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC826591D31C71400BBAC92 /* FTPNet.swift */; };
+		ADC8265C1D31CAF400BBAC92 /* RebekkaTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD620BA41D3156D000977393 /* RebekkaTouch.framework */; };
+		ADC8265D1D31CAF400BBAC92 /* RebekkaTouch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD620BA41D3156D000977393 /* RebekkaTouch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ADC826621D31D15400BBAC92 /* NMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC826611D31D15400BBAC92 /* NMainController.swift */; };
+		ADC826651D31DB6800BBAC92 /* default.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADC826631D31DB6800BBAC92 /* default.xib */; };
+		ADC826671D31E11000BBAC92 /* NSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC826661D31E11000BBAC92 /* NSearchController.swift */; };
+		ADDAC5791D24BC4F002A446C /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADDAC5771D24BC4F002A446C /* ContentCell.xib */; };
 		ADE017831D17C8B300D0E256 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE017821D17C8B300D0E256 /* SwiftyJSON.swift */; };
 		ADE982D11D13E468005955F7 /* NTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE982CF1D13E468005955F7 /* NTableViewCell.swift */; };
 		ADE982DC1D13E741005955F7 /* PackageChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADE982D51D13E741005955F7 /* PackageChooseView.xib */; };
@@ -54,7 +69,42 @@
 			remoteGlobalIDString = AD2194741D05114900F45A21;
 			remoteInfo = "NCar-X";
 		};
+		AD620BA11D3156D000977393 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD620B9C1D3156CF00977393 /* Rebekka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47FFC2831B09279200D3EDFE;
+			remoteInfo = Rebekka;
+		};
+		AD620BA31D3156D000977393 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD620B9C1D3156CF00977393 /* Rebekka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47FFC2DC1B09297E00D3EDFE;
+			remoteInfo = RebekkaTouch;
+		};
+		ADC8265E1D31CAF400BBAC92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD620B9C1D3156CF00977393 /* Rebekka.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 47FFC2DB1B09297E00D3EDFE;
+			remoteInfo = RebekkaTouch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ADC826601D31CAF400BBAC92 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ADC8265D1D31CAF400BBAC92 /* RebekkaTouch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD00D6E71D0FAB08005E8E00 /* NCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCameraController.swift; sourceTree = "<group>"; };
@@ -71,7 +121,7 @@
 		AD2194941D05114900F45A21 /* NCar-XUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NCar-XUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2194981D05114900F45A21 /* NCar_XUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCar_XUITests.swift; sourceTree = "<group>"; };
 		AD21949A1D05114900F45A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD2194A81D052CE700F45A21 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AD2194A81D052CE700F45A21 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		AD2194AB1D05803900F45A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD224B941D1BC1EC00AFD8D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PackageCell.xib; sourceTree = "<group>"; };
 		AD224BA31D1C042300AFD8D3 /* config */ = {isa = PBXFileReference; lastKnownFileType = folder; name = config; path = Resource/config; sourceTree = "<group>"; };
@@ -86,9 +136,23 @@
 		AD224BAE1D1C05A500AFD8D3 /* tabbar_profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_profile@3x.png"; sourceTree = "<group>"; };
 		AD224BAF1D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_profile_selected@3x.png"; sourceTree = "<group>"; };
 		AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHomeController.swift; sourceTree = "<group>"; };
-		AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeData.plist; sourceTree = "<group>"; };
+		AD3312051D32A45300A5C521 /* DS-DIGIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DS-DIGIB.TTF"; path = "Resource/DS-DIGIB.TTF"; sourceTree = "<group>"; };
+		AD620B991D30BECB00977393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "NCar-X/Base.lproj/craftRecommendCell.xib"; sourceTree = "<group>"; };
+		AD620B9C1D3156CF00977393 /* Rebekka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rebekka.xcodeproj; path = "NCar-X/Rebekka.xcodeproj"; sourceTree = "<group>"; };
+		AD6C5A2B1D2256060004452E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resource/background.png; sourceTree = "<group>"; };
+		AD6C5A2C1D2256060004452E /* cellNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cellNormal.png; path = Resource/cellNormal.png; sourceTree = "<group>"; };
+		AD6C5A2D1D2256060004452E /* cellSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cellSelected.png; path = Resource/cellSelected.png; sourceTree = "<group>"; };
+		AD71771E1D34DD9100B67043 /* ImageChooseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageChooseController.swift; sourceTree = "<group>"; };
+		AD71772D1D34F1D900B67043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ImageChoose.xib; sourceTree = "<group>"; };
+		AD71772F1D35299F00B67043 /* ZuberImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZuberImage.swift; sourceTree = "<group>"; };
+		AD7177301D35299F00B67043 /* ZuberImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZuberImageCell.swift; sourceTree = "<group>"; };
 		AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarMainModel.swift; sourceTree = "<group>"; };
 		AD9672831D191D5E002BB801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MultTableView.xib; sourceTree = "<group>"; };
+		ADC826591D31C71400BBAC92 /* FTPNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTPNet.swift; sourceTree = "<group>"; };
+		ADC826611D31D15400BBAC92 /* NMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NMainController.swift; sourceTree = "<group>"; };
+		ADC826641D31DB6800BBAC92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/default.xib; sourceTree = "<group>"; };
+		ADC826661D31E11000BBAC92 /* NSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSearchController.swift; sourceTree = "<group>"; };
+		ADDAC5781D24BC4F002A446C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ContentCell.xib; sourceTree = "<group>"; };
 		ADE017811D17C8B300D0E256 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftyJSON.h; sourceTree = "<group>"; };
 		ADE017821D17C8B300D0E256 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		ADE982CF1D13E468005955F7 /* NTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NTableViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC8265C1D31CAF400BBAC92 /* RebekkaTouch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,9 +189,15 @@
 		AD00D6E91D0FD877005E8E00 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AD3312051D32A45300A5C521 /* DS-DIGIB.TTF */,
+				AD6C5A2B1D2256060004452E /* background.png */,
+				AD6C5A2C1D2256060004452E /* cellNormal.png */,
+				AD6C5A2D1D2256060004452E /* cellSelected.png */,
 				AD224BA51D1C05A500AFD8D3 /* tab */,
 				AD224BA31D1C042300AFD8D3 /* config */,
 				AD224B931D1BC1EC00AFD8D3 /* PackageCell.xib */,
+				ADDAC5771D24BC4F002A446C /* ContentCell.xib */,
+				AD620B981D30BECB00977393 /* craftRecommendCell.xib */,
 				ADE982D51D13E741005955F7 /* PackageChooseView.xib */,
 				ADE982D71D13E741005955F7 /* SwitchCell.xib */,
 				AD2194AA1D05803900F45A21 /* Main.storyboard */,
@@ -134,14 +205,19 @@
 				AD00D6EE1D0FDE44005E8E00 /* iTunesArtwork */,
 				AD00D6EA1D0FD925005E8E00 /* Images.xcassets */,
 				AD9672821D191D5E002BB801 /* MultTableView.xib */,
+				ADC826631D31DB6800BBAC92 /* default.xib */,
+				AD71772C1D34F1D900B67043 /* ImageChoose.xib */,
 			);
 			name = Resource;
+			path = "NCar-X";
 			sourceTree = "<group>";
 		};
 		AD21946C1D05114900F45A21 = {
 			isa = PBXGroup;
 			children = (
+				AD620B9C1D3156CF00977393 /* Rebekka.xcodeproj */,
 				AD2194771D05114900F45A21 /* NCar-X */,
+				AD00D6E91D0FD877005E8E00 /* Resource */,
 				AD21948C1D05114900F45A21 /* NCar-XTests */,
 				AD2194971D05114900F45A21 /* NCar-XUITests */,
 				AD2194761D05114900F45A21 /* Products */,
@@ -161,17 +237,21 @@
 		AD2194771D05114900F45A21 /* NCar-X */ = {
 			isa = PBXGroup;
 			children = (
+				AD71772F1D35299F00B67043 /* ZuberImage.swift */,
+				AD7177301D35299F00B67043 /* ZuberImageCell.swift */,
+				ADC826581D31C6F800BBAC92 /* NetWork */,
 				ADE017801D17C8B300D0E256 /* SwiftyJson */,
 				ADE982CF1D13E468005955F7 /* NTableViewCell.swift */,
-				AD00D6E91D0FD877005E8E00 /* Resource */,
 				AD2194781D05114900F45A21 /* AppDelegate.swift */,
 				AD00D6E71D0FAB08005E8E00 /* NCameraController.swift */,
 				AD21947A1D05114900F45A21 /* ViewController.swift */,
 				AD2194841D05114900F45A21 /* Info.plist */,
-				AD2194A81D052CE700F45A21 /* MainView.swift */,
+				AD2194A81D052CE700F45A21 /* SettingsController.swift */,
 				AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */,
-				AD2C3FC21D0EBF0C007BDB2D /* HomeData.plist */,
 				AD8A5AE81D1696A90033AAAE /* CarMainModel.swift */,
+				ADC826611D31D15400BBAC92 /* NMainController.swift */,
+				ADC826661D31E11000BBAC92 /* NSearchController.swift */,
+				AD71771E1D34DD9100B67043 /* ImageChooseController.swift */,
 			);
 			path = "NCar-X";
 			sourceTree = "<group>";
@@ -212,6 +292,23 @@
 			path = Resource/tab;
 			sourceTree = "<group>";
 		};
+		AD620B9D1D3156CF00977393 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD620BA21D3156D000977393 /* Rebekka.framework */,
+				AD620BA41D3156D000977393 /* RebekkaTouch.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADC826581D31C6F800BBAC92 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				ADC826591D31C71400BBAC92 /* FTPNet.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
 		ADE017801D17C8B300D0E256 /* SwiftyJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,10 +328,12 @@
 				AD2194711D05114900F45A21 /* Sources */,
 				AD2194721D05114900F45A21 /* Frameworks */,
 				AD2194731D05114900F45A21 /* Resources */,
+				ADC826601D31CAF400BBAC92 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ADC8265F1D31CAF400BBAC92 /* PBXTargetDependency */,
 			);
 			name = "NCar-X";
 			productName = "NCar-X";
@@ -311,6 +410,12 @@
 			mainGroup = AD21946C1D05114900F45A21;
 			productRefGroup = AD2194761D05114900F45A21 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AD620B9D1D3156CF00977393 /* Products */;
+					ProjectRef = AD620B9C1D3156CF00977393 /* Rebekka.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AD2194741D05114900F45A21 /* NCar-X */,
@@ -320,25 +425,49 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		AD620BA21D3156D000977393 /* Rebekka.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Rebekka.framework;
+			remoteRef = AD620BA11D3156D000977393 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AD620BA41D3156D000977393 /* RebekkaTouch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RebekkaTouch.framework;
+			remoteRef = AD620BA31D3156D000977393 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		AD2194731D05114900F45A21 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6C5A2F1D2256060004452E /* cellNormal.png in Resources */,
 				AD2194831D05114900F45A21 /* LaunchScreen.storyboard in Resources */,
+				ADC826651D31DB6800BBAC92 /* default.xib in Resources */,
+				AD3312061D32A45300A5C521 /* DS-DIGIB.TTF in Resources */,
 				ADE982DD1D13E741005955F7 /* SwitchCell.xib in Resources */,
 				AD224BB01D1C05A500AFD8D3 /* surprise_camerabutton@3x.png in Resources */,
 				AD00D6EF1D0FDE44005E8E00 /* iTunesArtwork in Resources */,
+				ADDAC5791D24BC4F002A446C /* ContentCell.xib in Resources */,
+				AD620B9A1D30BECB00977393 /* craftRecommendCell.xib in Resources */,
 				AD00D6EB1D0FD925005E8E00 /* Images.xcassets in Resources */,
 				AD224BB71D1C05A500AFD8D3 /* tabbar_message_center_selected@3x.png in Resources */,
 				AD224BB61D1C05A500AFD8D3 /* tabbar_message_center@3x.png in Resources */,
 				AD224BB81D1C05A500AFD8D3 /* tabbar_profile@3x.png in Resources */,
+				AD6C5A2E1D2256060004452E /* background.png in Resources */,
 				AD224BB91D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png in Resources */,
+				AD6C5A301D2256060004452E /* cellSelected.png in Resources */,
 				AD224BB51D1C05A500AFD8D3 /* tabbar_home_selected@3x.png in Resources */,
+				AD71772E1D34F1D900B67043 /* ImageChoose.xib in Resources */,
 				ADE982DC1D13E741005955F7 /* PackageChooseView.xib in Resources */,
 				AD2194AC1D05803900F45A21 /* Main.storyboard in Resources */,
 				AD224BA41D1C042300AFD8D3 /* config in Resources */,
-				AD2C3FC31D0EBF0C007BDB2D /* HomeData.plist in Resources */,
 				AD224BB31D1C05A500AFD8D3 /* tabbar_discover_selected@3x.png in Resources */,
 				AD224B951D1BC1EC00AFD8D3 /* PackageCell.xib in Resources */,
 				AD224BB21D1C05A500AFD8D3 /* tabbar_discover@3x.png in Resources */,
@@ -370,12 +499,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD21947B1D05114900F45A21 /* ViewController.swift in Sources */,
-				AD2194A91D052CE700F45A21 /* MainView.swift in Sources */,
+				AD2194A91D052CE700F45A21 /* SettingsController.swift in Sources */,
+				AD71771F1D34DD9100B67043 /* ImageChooseController.swift in Sources */,
 				AD8A5AE91D1696A90033AAAE /* CarMainModel.swift in Sources */,
 				ADE017831D17C8B300D0E256 /* SwiftyJSON.swift in Sources */,
 				AD2194791D05114900F45A21 /* AppDelegate.swift in Sources */,
+				ADC826621D31D15400BBAC92 /* NMainController.swift in Sources */,
+				AD7177311D35299F00B67043 /* ZuberImage.swift in Sources */,
+				ADC826671D31E11000BBAC92 /* NSearchController.swift in Sources */,
 				AD2C3FC11D0EB36B007BDB2D /* NHomeController.swift in Sources */,
+				AD7177321D35299F00B67043 /* ZuberImageCell.swift in Sources */,
 				AD00D6E81D0FAB08005E8E00 /* NCameraController.swift in Sources */,
+				ADC8265A1D31C71400BBAC92 /* FTPNet.swift in Sources */,
 				ADE982D11D13E468005955F7 /* NTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +544,11 @@
 			target = AD2194741D05114900F45A21 /* NCar-X */;
 			targetProxy = AD2194951D05114900F45A21 /* PBXContainerItemProxy */;
 		};
+		ADC8265F1D31CAF400BBAC92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RebekkaTouch;
+			targetProxy = ADC8265E1D31CAF400BBAC92 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -436,12 +576,45 @@
 			name = PackageCell.xib;
 			sourceTree = "<group>";
 		};
+		AD620B981D30BECB00977393 /* craftRecommendCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD620B991D30BECB00977393 /* Base */,
+			);
+			name = craftRecommendCell.xib;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AD71772C1D34F1D900B67043 /* ImageChoose.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD71772D1D34F1D900B67043 /* Base */,
+			);
+			name = ImageChoose.xib;
+			sourceTree = "<group>";
+		};
 		AD9672821D191D5E002BB801 /* MultTableView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AD9672831D191D5E002BB801 /* Base */,
 			);
 			name = MultTableView.xib;
+			sourceTree = "<group>";
+		};
+		ADC826631D31DB6800BBAC92 /* default.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADC826641D31DB6800BBAC92 /* Base */,
+			);
+			name = default.xib;
+			sourceTree = "<group>";
+		};
+		ADDAC5771D24BC4F002A446C /* ContentCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADDAC5781D24BC4F002A446C /* Base */,
+			);
+			name = ContentCell.xib;
 			sourceTree = "<group>";
 		};
 		ADE982D51D13E741005955F7 /* PackageChooseView.xib */ = {
@@ -554,8 +727,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "NCar-X/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Relvin.NCar-X";
 				PRODUCT_NAME = "测量无忧";
@@ -568,8 +742,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Mengguo Game Technology Co., Ltd.";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "NCar-X/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Relvin.NCar-X";
 				PRODUCT_NAME = "测量无忧";
