@@ -35,6 +35,8 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     var _defalutFontSize : CGFloat = 14
     var keyboardShow : Bool = false
     
+    var _tableViewY : CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad();
         touchView.hidden = true;
@@ -68,6 +70,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     override func viewDidAppear(animated: Bool) {
         let frame = _tableContainer.frame;
         let inputFrame = _inputView.frame;
+        _tableViewY = inputFrame.height;
         _tableView.frame = CGRect(x: 0,y: inputFrame.height,width: frame.width,height: frame.height - inputFrame.height);
         self.refreshLayer();
     }
@@ -95,11 +98,11 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
             let rectIntable = _tableView.rectForRowAtIndexPath(indexPath);
             let rect = _tableView.convertRect(rectIntable, toView: self.view);
             
-            offset -= (self.view.frame.height - rect.origin.y - rect.height);
+            offset = (self.view.frame.height - rect.origin.y - rect.height) - offset + _tableViewY;
         }
         else{
             touchView.hidden = false;
-            offset -= 50;
+            offset = 50;
         }
         
         self.animateTextField(offset);
@@ -107,18 +110,18 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     func animateTextField(yOffset : CGFloat) {
         
-        if (yOffset >= 0)
-        {
+//        if (yOffset <= 0)
+//        {
             let orgRect = _tableView.frame;
             UIView.beginAnimations("Animation", context: nil);
             UIView.setAnimationBeginsFromCurrentState(true);
             UIView.setAnimationDuration(0.5);
             
-            _tableView.frame = CGRect(x: orgRect.origin.x,y: -yOffset,width: orgRect.width,height: orgRect.height);
+            _tableView.frame = CGRect(x: orgRect.origin.x,y: yOffset,width: orgRect.width,height: orgRect.height);
             
             UIView.commitAnimations();
             
-        }
+//        }
     }
     
     func cellTableTouched(cellInfo:subComponentModel ,subIndex : Int)
@@ -371,8 +374,13 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
         {
             inputStr = "0";
         }
+        
         if (subIndex == -1)
         {
+            if (selectedIndex == 0)
+            {
+                _homeData.name = inputStr!;
+            }
             partData.value = inputStr!;
         }
         else{
@@ -386,7 +394,7 @@ class NHomeController:  UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     @IBAction func touchUpInside(sender: AnyObject) {
         self.view.endEditing(true);
-        self.animateTextField(0);
+        self.animateTextField(_tableViewY);
         touchView.hidden = true;
         
     }

@@ -165,7 +165,6 @@ class SwitchCell: NTableViewCell,UITableViewDelegate,UITableViewDataSource
         if (cell == nil){
             cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
-            cell!.detailTextLabel?.font = UIFont(name: "DS-Digital-Bold",size: 14)
             cell!.backgroundColor = UIColor.clearColor()
         }
         let subId = _cellInfo.getAdditionalIdByIndex(section);
@@ -257,7 +256,7 @@ class PackageCell : NTableViewCell,UITableViewDelegate,UITableViewDataSource
             cell = NTableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "textField");
             cell!.selectionStyle = UITableViewCellSelectionStyle.None
             cell!.backgroundColor = UIColor.clearColor()
-            cell!.detailTextLabel?.font = UIFont(name: "DS-Digital-Bold",size: 14)
+
         }
         let subId = _cellInfo.getAdditionalIdByIndex(section);
         let subDict = self._additionalForm[String(subId)] as! NSDictionary;

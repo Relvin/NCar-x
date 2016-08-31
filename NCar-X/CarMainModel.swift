@@ -118,7 +118,9 @@ class CarMainModel
 }
 
 class ComponentModel: NSObject {
+    var name : String = ""
     var parts : [Int : subComponentModel] = [:]
+    var images : [String] = []
     init (info : NSDictionary) {
         super.init();
         for (key,value) in info{
@@ -140,6 +142,53 @@ class ComponentModel: NSObject {
         return parts[id];
     }
     
+    func getSavePath() -> String {
+        let docPath = NSHomeDirectory() + "/Documents/";
+        return docPath;
+    }
+    
+    
+    func partsToString() ->Bool{
+        if name == ""{
+            return false;
+        }
+        do{
+            var dict :[String:AnyObject] = [:];
+            for (key,value) in parts{
+                dict[String(key)] = value.convertToDict();
+            }
+            
+            let data : NSData! = try NSJSONSerialization.dataWithJSONObject(dict, options: [])
+            let str = NSString(data:data, encoding: NSUTF8StringEncoding)
+            print(str);
+            
+            let fileManager = NSFileManager.defaultManager()
+            let fileDir = getSavePath();
+            let filePath:String = fileDir + name + ".json"
+            let exist = fileManager.fileExistsAtPath(filePath)
+            if (!exist)
+            {
+                try! fileManager.createDirectoryAtPath(fileDir,
+                                                  withIntermediateDirectories: true, attributes: nil)
+            }
+            try! str!.writeToFile(filePath, atomically: true, encoding: NSUTF8StringEncoding);
+            
+            FTPNet.sharedInstance.uploadFile(filePath){
+                (result, error) -> Void in
+                showDialog("提示", msg: "保存成功", delegate: nil);
+            }
+            for image in images {
+                FTPNet.sharedInstance.uploadFile(fileDir + image){
+                    (result, error) -> Void in
+                }
+            }
+        }
+        catch{
+            print(error);
+        }
+        
+        return true
+    }
     
 }
 
@@ -231,6 +280,32 @@ class subComponentModel: NSObject {
 
     func setAdditionalValueById(id : Int,value : String) {
         self.additional.updateValue(value, forKey: id);
+    }
+    
+    func convertToDict() -> NSDictionary {
+        var dict: [String:AnyObject] = [:]
+        dict["ID"] = String(self.id);
+        dict["Name"] = self.name;
+        dict["Type"] = String(self.type.rawValue);
+        dict["Value"] = String(self.value);
+        dict["Unit"] = String(self.unit);
+        var typeStrValue : [String] = [];
+        for value in self.typeValue
+        {
+            typeStrValue.append(String(value));
+        }
+        dict["TypeValue"] = typeStrValue;
+        dict["Open"] = String(self.open);
+        dict["Content"] = String(self.content);
+        
+        var strAddit : [String:String] = [:];
+        for (key,value )in self.additional
+        {
+            strAddit[String(key)] = value;
+        }
+        dict["Additional"] = strAddit;
+        
+        return dict;
     }
     
 }

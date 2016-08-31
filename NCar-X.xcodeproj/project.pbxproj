@@ -10,6 +10,9 @@
 		AD00D6E81D0FAB08005E8E00 /* NCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00D6E71D0FAB08005E8E00 /* NCameraController.swift */; };
 		AD00D6EB1D0FD925005E8E00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD00D6EA1D0FD925005E8E00 /* Images.xcassets */; };
 		AD00D6EF1D0FDE44005E8E00 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = AD00D6EE1D0FDE44005E8E00 /* iTunesArtwork */; };
+		AD15CDE61D433E1F0002F212 /* NetBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CDE51D433E1F0002F212 /* NetBase.swift */; };
+		AD15CDEC1D4346470002F212 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD15CDEA1D4346470002F212 /* LoginView.xib */; };
+		AD15CDEE1D4346760002F212 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD15CDED1D4346760002F212 /* LoginView.swift */; };
 		AD2194791D05114900F45A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2194781D05114900F45A21 /* AppDelegate.swift */; };
 		AD21947B1D05114900F45A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD21947A1D05114900F45A21 /* ViewController.swift */; };
 		AD2194831D05114900F45A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD2194811D05114900F45A21 /* LaunchScreen.storyboard */; };
@@ -31,6 +34,25 @@
 		AD224BB91D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AD224BAF1D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png */; };
 		AD2C3FC11D0EB36B007BDB2D /* NHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */; };
 		AD3312061D32A45300A5C521 /* DS-DIGIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = AD3312051D32A45300A5C521 /* DS-DIGIB.TTF */; };
+		AD60BB6A1D44A7470062E95A /* LGAssertGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB5D1D44A7470062E95A /* LGAssertGridViewCell.swift */; };
+		AD60BB6B1D44A7470062E95A /* LGAssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB5E1D44A7470062E95A /* LGAssetGridViewController.swift */; };
+		AD60BB6C1D44A7470062E95A /* LGAssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB5F1D44A7470062E95A /* LGAssetModel.swift */; };
+		AD60BB6D1D44A7470062E95A /* LGAssetToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB601D44A7470062E95A /* LGAssetToolView.swift */; };
+		AD60BB6E1D44A7470062E95A /* LGAssetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB611D44A7470062E95A /* LGAssetViewCell.swift */; };
+		AD60BB6F1D44A7470062E95A /* LGAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB621D44A7470062E95A /* LGAssetViewController.swift */; };
+		AD60BB701D44A7470062E95A /* LGAssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB631D44A7470062E95A /* LGAssetViewModel.swift */; };
+		AD60BB711D44A7470062E95A /* LGCollectionViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB641D44A7470062E95A /* LGCollectionViewControllerExtension.swift */; };
+		AD60BB721D44A7470062E95A /* LGDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB651D44A7470062E95A /* LGDismissAnimationController.swift */; };
+		AD60BB731D44A7470062E95A /* LGImagePickController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB661D44A7470062E95A /* LGImagePickController.swift */; };
+		AD60BB741D44A7470062E95A /* LGImagePickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB671D44A7470062E95A /* LGImagePickModel.swift */; };
+		AD60BB751D44A7470062E95A /* LGImagePickViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB681D44A7470062E95A /* LGImagePickViewModel.swift */; };
+		AD60BB761D44A7470062E95A /* LGPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB691D44A7470062E95A /* LGPresentAnimationController.swift */; };
+		AD60BB7C1D44A81C0062E95A /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB791D44A81C0062E95A /* CGRectEx.swift */; };
+		AD60BB7D1D44A81C0062E95A /* LGColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB7A1D44A81C0062E95A /* LGColorEx.swift */; };
+		AD60BB7E1D44A81C0062E95A /* LGCommonEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB7B1D44A81C0062E95A /* LGCommonEx.swift */; };
+		AD60BB811D44A85C0062E95A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60BB801D44A85C0062E95A /* Observable.swift */; };
+		AD60BB841D44AADF0062E95A /* CellBlueSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60BB821D44AADF0062E95A /* CellBlueSelected.png */; };
+		AD60BB851D44AADF0062E95A /* CellGreySelected.png in Resources */ = {isa = PBXBuildFile; fileRef = AD60BB831D44AADF0062E95A /* CellGreySelected.png */; };
 		AD620B9A1D30BECB00977393 /* craftRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD620B981D30BECB00977393 /* craftRecommendCell.xib */; };
 		AD6C5A2E1D2256060004452E /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6C5A2B1D2256060004452E /* background.png */; };
 		AD6C5A2F1D2256060004452E /* cellNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = AD6C5A2C1D2256060004452E /* cellNormal.png */; };
@@ -110,6 +132,9 @@
 		AD00D6E71D0FAB08005E8E00 /* NCameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NCameraController.swift; sourceTree = "<group>"; };
 		AD00D6EA1D0FD925005E8E00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AD00D6EE1D0FDE44005E8E00 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resource/iTunesArtwork; sourceTree = "<group>"; };
+		AD15CDE51D433E1F0002F212 /* NetBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetBase.swift; sourceTree = "<group>"; };
+		AD15CDEB1D4346470002F212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginView.xib; sourceTree = "<group>"; };
+		AD15CDED1D4346760002F212 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AD2194751D05114900F45A21 /* 测量无忧.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "测量无忧.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2194781D05114900F45A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD21947A1D05114900F45A21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +162,25 @@
 		AD224BAF1D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_profile_selected@3x.png"; sourceTree = "<group>"; };
 		AD2C3FC01D0EB36B007BDB2D /* NHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NHomeController.swift; sourceTree = "<group>"; };
 		AD3312051D32A45300A5C521 /* DS-DIGIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DS-DIGIB.TTF"; path = "Resource/DS-DIGIB.TTF"; sourceTree = "<group>"; };
+		AD60BB5D1D44A7470062E95A /* LGAssertGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGAssertGridViewCell.swift; sourceTree = "<group>"; };
+		AD60BB5E1D44A7470062E95A /* LGAssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGAssetGridViewController.swift; sourceTree = "<group>"; };
+		AD60BB5F1D44A7470062E95A /* LGAssetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGAssetModel.swift; sourceTree = "<group>"; };
+		AD60BB601D44A7470062E95A /* LGAssetToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGAssetToolView.swift; sourceTree = "<group>"; };
+		AD60BB611D44A7470062E95A /* LGAssetViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGAssetViewCell.swift; sourceTree = "<group>"; };
+		AD60BB621D44A7470062E95A /* LGAssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGAssetViewController.swift; sourceTree = "<group>"; };
+		AD60BB631D44A7470062E95A /* LGAssetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGAssetViewModel.swift; sourceTree = "<group>"; };
+		AD60BB641D44A7470062E95A /* LGCollectionViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGCollectionViewControllerExtension.swift; sourceTree = "<group>"; };
+		AD60BB651D44A7470062E95A /* LGDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGDismissAnimationController.swift; sourceTree = "<group>"; };
+		AD60BB661D44A7470062E95A /* LGImagePickController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGImagePickController.swift; sourceTree = "<group>"; };
+		AD60BB671D44A7470062E95A /* LGImagePickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGImagePickModel.swift; sourceTree = "<group>"; };
+		AD60BB681D44A7470062E95A /* LGImagePickViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGImagePickViewModel.swift; sourceTree = "<group>"; };
+		AD60BB691D44A7470062E95A /* LGPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGPresentAnimationController.swift; sourceTree = "<group>"; };
+		AD60BB791D44A81C0062E95A /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		AD60BB7A1D44A81C0062E95A /* LGColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGColorEx.swift; sourceTree = "<group>"; };
+		AD60BB7B1D44A81C0062E95A /* LGCommonEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LGCommonEx.swift; sourceTree = "<group>"; };
+		AD60BB801D44A85C0062E95A /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		AD60BB821D44AADF0062E95A /* CellBlueSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellBlueSelected.png; path = Resource/CellBlueSelected.png; sourceTree = "<group>"; };
+		AD60BB831D44AADF0062E95A /* CellGreySelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CellGreySelected.png; path = Resource/CellGreySelected.png; sourceTree = "<group>"; };
 		AD620B991D30BECB00977393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "NCar-X/Base.lproj/craftRecommendCell.xib"; sourceTree = "<group>"; };
 		AD620B9C1D3156CF00977393 /* Rebekka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rebekka.xcodeproj; path = "NCar-X/Rebekka.xcodeproj"; sourceTree = "<group>"; };
 		AD6C5A2B1D2256060004452E /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resource/background.png; sourceTree = "<group>"; };
@@ -189,6 +233,8 @@
 		AD00D6E91D0FD877005E8E00 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				AD60BB821D44AADF0062E95A /* CellBlueSelected.png */,
+				AD60BB831D44AADF0062E95A /* CellGreySelected.png */,
 				AD3312051D32A45300A5C521 /* DS-DIGIB.TTF */,
 				AD6C5A2B1D2256060004452E /* background.png */,
 				AD6C5A2C1D2256060004452E /* cellNormal.png */,
@@ -197,6 +243,7 @@
 				AD224BA31D1C042300AFD8D3 /* config */,
 				AD224B931D1BC1EC00AFD8D3 /* PackageCell.xib */,
 				ADDAC5771D24BC4F002A446C /* ContentCell.xib */,
+				AD15CDEA1D4346470002F212 /* LoginView.xib */,
 				AD620B981D30BECB00977393 /* craftRecommendCell.xib */,
 				ADE982D51D13E741005955F7 /* PackageChooseView.xib */,
 				ADE982D71D13E741005955F7 /* SwitchCell.xib */,
@@ -237,6 +284,8 @@
 		AD2194771D05114900F45A21 /* NCar-X */ = {
 			isa = PBXGroup;
 			children = (
+				AD60BB5C1D44A7470062E95A /* imagePick */,
+				AD15CDED1D4346760002F212 /* LoginView.swift */,
 				AD71772F1D35299F00B67043 /* ZuberImage.swift */,
 				AD7177301D35299F00B67043 /* ZuberImageCell.swift */,
 				ADC826581D31C6F800BBAC92 /* NetWork */,
@@ -292,6 +341,46 @@
 			path = Resource/tab;
 			sourceTree = "<group>";
 		};
+		AD60BB5C1D44A7470062E95A /* imagePick */ = {
+			isa = PBXGroup;
+			children = (
+				AD60BB7F1D44A85C0062E95A /* utilities */,
+				AD60BB781D44A81C0062E95A /* Extension */,
+				AD60BB5D1D44A7470062E95A /* LGAssertGridViewCell.swift */,
+				AD60BB5E1D44A7470062E95A /* LGAssetGridViewController.swift */,
+				AD60BB5F1D44A7470062E95A /* LGAssetModel.swift */,
+				AD60BB601D44A7470062E95A /* LGAssetToolView.swift */,
+				AD60BB611D44A7470062E95A /* LGAssetViewCell.swift */,
+				AD60BB621D44A7470062E95A /* LGAssetViewController.swift */,
+				AD60BB631D44A7470062E95A /* LGAssetViewModel.swift */,
+				AD60BB641D44A7470062E95A /* LGCollectionViewControllerExtension.swift */,
+				AD60BB651D44A7470062E95A /* LGDismissAnimationController.swift */,
+				AD60BB661D44A7470062E95A /* LGImagePickController.swift */,
+				AD60BB671D44A7470062E95A /* LGImagePickModel.swift */,
+				AD60BB681D44A7470062E95A /* LGImagePickViewModel.swift */,
+				AD60BB691D44A7470062E95A /* LGPresentAnimationController.swift */,
+			);
+			path = imagePick;
+			sourceTree = "<group>";
+		};
+		AD60BB781D44A81C0062E95A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AD60BB791D44A81C0062E95A /* CGRectEx.swift */,
+				AD60BB7A1D44A81C0062E95A /* LGColorEx.swift */,
+				AD60BB7B1D44A81C0062E95A /* LGCommonEx.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AD60BB7F1D44A85C0062E95A /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AD60BB801D44A85C0062E95A /* Observable.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
 		AD620B9D1D3156CF00977393 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				ADC826591D31C71400BBAC92 /* FTPNet.swift */,
+				AD15CDE51D433E1F0002F212 /* NetBase.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -454,14 +544,17 @@
 				ADE982DD1D13E741005955F7 /* SwitchCell.xib in Resources */,
 				AD224BB01D1C05A500AFD8D3 /* surprise_camerabutton@3x.png in Resources */,
 				AD00D6EF1D0FDE44005E8E00 /* iTunesArtwork in Resources */,
+				AD60BB841D44AADF0062E95A /* CellBlueSelected.png in Resources */,
 				ADDAC5791D24BC4F002A446C /* ContentCell.xib in Resources */,
 				AD620B9A1D30BECB00977393 /* craftRecommendCell.xib in Resources */,
 				AD00D6EB1D0FD925005E8E00 /* Images.xcassets in Resources */,
+				AD15CDEC1D4346470002F212 /* LoginView.xib in Resources */,
 				AD224BB71D1C05A500AFD8D3 /* tabbar_message_center_selected@3x.png in Resources */,
 				AD224BB61D1C05A500AFD8D3 /* tabbar_message_center@3x.png in Resources */,
 				AD224BB81D1C05A500AFD8D3 /* tabbar_profile@3x.png in Resources */,
 				AD6C5A2E1D2256060004452E /* background.png in Resources */,
 				AD224BB91D1C05A500AFD8D3 /* tabbar_profile_selected@3x.png in Resources */,
+				AD60BB851D44AADF0062E95A /* CellGreySelected.png in Resources */,
 				AD6C5A301D2256060004452E /* cellSelected.png in Resources */,
 				AD224BB51D1C05A500AFD8D3 /* tabbar_home_selected@3x.png in Resources */,
 				AD71772E1D34F1D900B67043 /* ImageChoose.xib in Resources */,
@@ -500,6 +593,9 @@
 			files = (
 				AD21947B1D05114900F45A21 /* ViewController.swift in Sources */,
 				AD2194A91D052CE700F45A21 /* SettingsController.swift in Sources */,
+				AD60BB6F1D44A7470062E95A /* LGAssetViewController.swift in Sources */,
+				AD15CDE61D433E1F0002F212 /* NetBase.swift in Sources */,
+				AD60BB7E1D44A81C0062E95A /* LGCommonEx.swift in Sources */,
 				AD71771F1D34DD9100B67043 /* ImageChooseController.swift in Sources */,
 				AD8A5AE91D1696A90033AAAE /* CarMainModel.swift in Sources */,
 				ADE017831D17C8B300D0E256 /* SwiftyJSON.swift in Sources */,
@@ -507,11 +603,27 @@
 				ADC826621D31D15400BBAC92 /* NMainController.swift in Sources */,
 				AD7177311D35299F00B67043 /* ZuberImage.swift in Sources */,
 				ADC826671D31E11000BBAC92 /* NSearchController.swift in Sources */,
+				AD60BB741D44A7470062E95A /* LGImagePickModel.swift in Sources */,
+				AD60BB7D1D44A81C0062E95A /* LGColorEx.swift in Sources */,
+				AD60BB6B1D44A7470062E95A /* LGAssetGridViewController.swift in Sources */,
 				AD2C3FC11D0EB36B007BDB2D /* NHomeController.swift in Sources */,
+				AD60BB6D1D44A7470062E95A /* LGAssetToolView.swift in Sources */,
+				AD60BB6E1D44A7470062E95A /* LGAssetViewCell.swift in Sources */,
+				AD60BB7C1D44A81C0062E95A /* CGRectEx.swift in Sources */,
 				AD7177321D35299F00B67043 /* ZuberImageCell.swift in Sources */,
 				AD00D6E81D0FAB08005E8E00 /* NCameraController.swift in Sources */,
+				AD60BB761D44A7470062E95A /* LGPresentAnimationController.swift in Sources */,
+				AD60BB811D44A85C0062E95A /* Observable.swift in Sources */,
+				AD60BB6C1D44A7470062E95A /* LGAssetModel.swift in Sources */,
 				ADC8265A1D31C71400BBAC92 /* FTPNet.swift in Sources */,
+				AD15CDEE1D4346760002F212 /* LoginView.swift in Sources */,
+				AD60BB6A1D44A7470062E95A /* LGAssertGridViewCell.swift in Sources */,
+				AD60BB751D44A7470062E95A /* LGImagePickViewModel.swift in Sources */,
+				AD60BB721D44A7470062E95A /* LGDismissAnimationController.swift in Sources */,
 				ADE982D11D13E468005955F7 /* NTableViewCell.swift in Sources */,
+				AD60BB701D44A7470062E95A /* LGAssetViewModel.swift in Sources */,
+				AD60BB711D44A7470062E95A /* LGCollectionViewControllerExtension.swift in Sources */,
+				AD60BB731D44A7470062E95A /* LGImagePickController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +664,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AD15CDEA1D4346470002F212 /* LoginView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD15CDEB1D4346470002F212 /* Base */,
+			);
+			name = LoginView.xib;
+			sourceTree = "<group>";
+		};
 		AD2194811D05114900F45A21 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -729,7 +849,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "NCar-X/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Relvin.NCar-X";
 				PRODUCT_NAME = "测量无忧";
@@ -744,7 +864,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Mengguo Game Technology Co., Ltd.";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "NCar-X/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Relvin.NCar-X";
 				PRODUCT_NAME = "测量无忧";

@@ -46,11 +46,11 @@ class ImageChooseController: UIViewController ,UICollectionViewDataSource,UIColl
     func initCollectionView(){
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection =  UICollectionViewScrollDirection.Vertical
-        let itemWidth = SCREEN_WIDTH/4 - 6
+        let itemWidth = SCREEN_WIDTH/3 - 6
         let itemHeight:CGFloat = 100.0
         flowLayout.itemSize = CGSize(width: itemWidth , height: itemHeight)
-        flowLayout.minimumLineSpacing = 2 //上下间隔
-        flowLayout.minimumInteritemSpacing = 2 //左右间隔
+        flowLayout.minimumLineSpacing = 5 //上下间隔
+        flowLayout.minimumInteritemSpacing = 5 //左右间隔
         
         self.collectionView.collectionViewLayout = flowLayout
         self.collectionView.backgroundColor = UIColor.clearColor()
@@ -76,17 +76,18 @@ class ImageChooseController: UIViewController ,UICollectionViewDataSource,UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! ZuberImageCell;
-        cell.update(imageArray[indexPath.row])
+        let row = imageArray.count - indexPath.row - 1;
+        cell.update(imageArray[row])
         cell.handleSelect={
             if cell.isSelect{
                 if self.count > 0{
                     self.count -= 1
                 }
-                self.imageArray[indexPath.row].isSelect = false
+                self.imageArray[row].isSelect = false
                 
             }else{
                 self.count += 1
-                self.imageArray[indexPath.row].isSelect = true
+                self.imageArray[row].isSelect = true
             }
             
             if(self.count > 0){

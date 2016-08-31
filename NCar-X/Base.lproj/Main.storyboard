@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GPM-i6-lX3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GPM-i6-lX3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -181,8 +181,7 @@
                             <constraint firstItem="pRK-hX-1Oc" firstAttribute="bottom" secondItem="JKa-fg-c1H" secondAttribute="bottomMargin" id="rk1-uc-TyF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="采集" image="tabbar_message_center.png" selectedImage="tabbar_message_center_selected.png" id="sTe-um-O7G" userLabel="采集"/>
-                    <navigationItem key="navigationItem" title="采集" id="hj4-Y2-csJ" userLabel="采集"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="采集" image="tabbar_message_center.png" selectedImage="tabbar_message_center_selected.png" id="sTe-um-O7G" userLabel="采集"/>
                     <connections>
                         <outlet property="_inputView" destination="Omf-GF-g7d" id="xup-gC-fye"/>
                         <outlet property="_nameLabel" destination="zWk-0Q-sce" id="HOv-oz-46W"/>
@@ -235,7 +234,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7Ir-Uq-l6s" secondAttribute="trailing" constant="-20" id="oqa-GY-9Lu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="查找" image="tabbar_discover.png" selectedImage="tabbar_discover_selected.png" id="jTt-dq-BWz"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="查找" image="tabbar_discover.png" selectedImage="tabbar_discover_selected.png" id="jTt-dq-BWz"/>
                     <connections>
                         <outlet property="_searchBar" destination="K2g-8J-PUr" id="FeI-76-tmJ"/>
                         <outlet property="_touchView" destination="7Ir-Uq-l6s" id="zQ7-E4-hge"/>
@@ -343,8 +342,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hh6-KH-JaU" secondAttribute="trailing" constant="-20" id="x1n-2a-LNP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="拍照" image="surprise_camerabutton.png" selectedImage="surprise_camerabutton_highlighted.png" id="SG3-Tq-yE5"/>
-                    <navigationItem key="navigationItem" title="拍照" id="nmO-ft-d0x"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="拍照" image="surprise_camerabutton.png" selectedImage="surprise_camerabutton_highlighted.png" id="SG3-Tq-yE5"/>
                     <connections>
                         <outlet property="_cameraButton" destination="hq4-VE-aXU" id="ZwZ-uk-Vdn"/>
                         <outlet property="_imageView" destination="hxn-ub-60Z" id="OD8-zS-3D9"/>
@@ -395,8 +393,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="我的" image="tabbar_profile.png" selectedImage="tabbar_profile_selected.png" id="yqm-qa-Rh7"/>
-                    <navigationItem key="navigationItem" title="我的" id="f4c-8I-145"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="我的" image="tabbar_profile.png" selectedImage="tabbar_profile_selected.png" id="yqm-qa-Rh7"/>
                     <connections>
                         <outlet property="_tableView" destination="KR1-tu-49m" id="d0R-LF-0T1"/>
                     </connections>
@@ -408,7 +405,7 @@
         <!--Navigation Controller-->
         <scene sceneID="dko-jq-Xjk">
             <objects>
-                <navigationController id="GPM-i6-lX3" sceneMemberID="viewController">
+                <navigationController id="GPM-i6-lX3" customClass="NavigationController" customModule="测量无忧" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rjb-0E-y9I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

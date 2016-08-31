@@ -47,7 +47,7 @@ extension UIImage{
 }
 
 
-class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate,PassPhotosDelegate{
+class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate,LGImagePickControllerDelegate,PassPhotosDelegate{
 
 
     @IBOutlet weak var _cameraButton: UIButton!
@@ -60,6 +60,8 @@ class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINav
     private var _photoList: [UIImage] = []
     private var _cameraList:[UIImage] = []
     private var _tableView: UITableView!
+    private var _imagePath: [String] = []
+    private var _cameraPath: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -79,7 +81,18 @@ class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINav
         let frame = _tableContainer.frame;
         _tableView.frame = CGRect(x: 0,y: 0,width: frame.width,height: frame.height);
         _tableView.reloadData();
-
+        
+        
+        
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated);
+        let component = CarMainModel.sharedInstance.getComponentInfo();
+        component.images.removeAll();
+        component.images += _cameraPath;
+        component.images += _imagePath;
+        
     }
     
     func passPhotos(selected:[ZuberImage])  {
@@ -87,6 +100,7 @@ class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINav
         for zuberImage in selected
         {
            let uiImage = UIImage(CGImage: zuberImage.asset.aspectRatioThumbnail().takeUnretainedValue())
+            self.saveImage(uiImage);
             _photoList.append(uiImage)
         }
     }
@@ -95,9 +109,15 @@ class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINav
         
         if (sender == _photoButton)
         {
-            let imageChoose = ImageChooseController(nibName: "ImageChoose",bundle: nil);
-            imageChoose.photoDelegate = self
-            self.navigationController?.pushViewController(imageChoose, animated: true);
+            
+            let imagePick = LGImagePickController()
+            imagePick.delegate = self
+            let nav = UINavigationController(rootViewController: imagePick)
+            self.presentViewController(nav, animated: true, completion: nil)
+            
+//            let imageChoose = ImageChooseController(nibName: "ImageChoose",bundle: nil);
+//            imageChoose.photoDelegate = self
+//            self.navigationController?.pushViewController(imageChoose, animated: true);
         }
         else{
             let imagePicker = UIImagePickerController();
@@ -122,10 +142,26 @@ class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINav
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
         
         self.dismissViewControllerAnimated(true, completion: nil)
-        
-        _cameraList.append(info[UIImagePickerControllerEditedImage] as! UIImage);
+        let uiimage = info[UIImagePickerControllerEditedImage] as! UIImage;
+        let imageName = self.saveImage(uiimage);
+        UIImageWriteToSavedPhotosAlbum(uiimage, nil, nil, nil);
+        _cameraList.append(uiimage);
+        self._cameraPath.append(imageName);
         
     }
+    
+    func saveImage(image : UIImage) -> String{
+        let component = CarMainModel.sharedInstance.getComponentInfo();
+        let savePath = component.getSavePath();
+        let date = NSDate()
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.dateFormat = "yyy-MM-dd_HH_mm_ss_SSS" //(格式可俺按自己需求修整)
+        let strNowTime = timeFormatter.stringFromDate(date) as String
+        let data = UIImagePNGRepresentation(image);
+        let imageName = strNowTime + ".png";
+        try! data!.writeToFile(savePath + imageName, options: NSDataWritingOptions.AtomicWrite)
+        return imageName;
+     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -185,6 +221,22 @@ class NCameraController:  UIViewController,UIImagePickerControllerDelegate,UINav
         _touchView.hidden = true;
     }
     
+    func imagePickerController(picker: LGImagePickController, didFinishPickingImages images: [UIImage])
+    {
+        self._imagePath.removeAll();
+        for uiImage in images
+        {
+            let imageName = self.saveImage(uiImage);
+            _photoList.append(uiImage)
+            self._imagePath.append(imageName);
+        }
+
+    }
+    func imagePickerControllerCanceled(picker: LGImagePickController)
+    {
+        self._imagePath.removeAll();
+    }
+    
 }
 
 class ImageCell: UITableViewCell {
@@ -239,5 +291,6 @@ class ImageCell: UITableViewCell {
     func getTouchIndex() -> Int {
         return self.touchIndex;
     }
+    
 }
 
